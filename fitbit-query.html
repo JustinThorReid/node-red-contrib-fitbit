@@ -3,7 +3,9 @@
         category: 'social',
         color: '#a6bbcf',
         defaults: {
-            name: { value: "" }
+            fitbit: { type: "fitbit-credentials", required: true },
+            name: { value: "" },
+            dataType: { value: "goals" }
         },
         inputs: 1,
         outputs: 1,
@@ -18,6 +20,14 @@
     <div class="form-row">
         <label for="node-input-fitbit"><i class="fa fa-user"></i> <span data-i18n="fitbit.label.fitbit"></span></label>
         <input type="text" id="node-input-fitbit">
+    </div>
+    <div class="form-row">
+        <label for="node-input-dataType"><i class="fa fa-tag"></i> <span data-i18n="fitbit.label.type"></span></label>
+        <select id="node-input-dataType" style="width:125px !important">
+            <option value="goals" data-i18n="fitbit.label.goals"></option>
+            <option value="sleep" data-i18n="fitbit.label.sleep"></option>
+            <option value="badges" data-i18n="fitbit.label.badges"></option>
+        </select>
     </div>
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
