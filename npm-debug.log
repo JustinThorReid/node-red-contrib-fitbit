@@ -1,0 +1,1693 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'i' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData popsicle
+20 silly mapToRegistry name popsicle
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/popsicle
+24 verbose request uri https://registry.npmjs.org/popsicle
+25 verbose request no auth needed
+26 info attempt registry request try #1 at 2:10:13 PM
+27 verbose request id 52a5220f3f0fa3ae
+28 verbose etag W/"fb6b8e4c614bc5ff6f9fa4b7521f1974"
+29 verbose lastModified Sun, 03 Nov 2019 12:48:44 GMT
+30 http request GET https://registry.npmjs.org/popsicle
+31 http 304 https://registry.npmjs.org/popsicle
+32 verbose headers { date: 'Sat, 04 Jan 2020 19:10:11 GMT',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'set-cookie':
+32 verbose headers    [ '__cfduid=d659523db719555a99c011ef7d8a4b4ec1578165011; expires=Mon, 03-Feb-20 19:10:11 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+32 verbose headers   'cf-ray': '54ff82dc7f0af349-ATL',
+32 verbose headers   age: '5116',
+32 verbose headers   'cache-control': 'public, max-age=300',
+32 verbose headers   etag: '"fb6b8e4c614bc5ff6f9fa4b7521f1974"',
+32 verbose headers   'last-modified': 'Sun, 03 Nov 2019 12:48:44 GMT',
+32 verbose headers   vary: 'Accept-Encoding',
+32 verbose headers   'cf-cache-status': 'HIT',
+32 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+32 verbose headers   server: 'cloudflare' }
+33 silly get cb [ 304,
+33 silly get   { date: 'Sat, 04 Jan 2020 19:10:11 GMT',
+33 silly get     connection: 'keep-alive',
+33 silly get     'set-cookie':
+33 silly get      [ '__cfduid=d659523db719555a99c011ef7d8a4b4ec1578165011; expires=Mon, 03-Feb-20 19:10:11 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+33 silly get     'cf-ray': '54ff82dc7f0af349-ATL',
+33 silly get     age: '5116',
+33 silly get     'cache-control': 'public, max-age=300',
+33 silly get     etag: '"fb6b8e4c614bc5ff6f9fa4b7521f1974"',
+33 silly get     'last-modified': 'Sun, 03 Nov 2019 12:48:44 GMT',
+33 silly get     vary: 'Accept-Encoding',
+33 silly get     'cf-cache-status': 'HIT',
+33 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+33 silly get     server: 'cloudflare' } ]
+34 verbose etag https://registry.npmjs.org/popsicle from cache
+35 verbose get saving popsicle to /home/thor/.npm/registry.npmjs.org/popsicle/.cache.json
+36 silly resolveWithNewModule popsicle@10.0.0 checking installable status
+37 silly cache add args [ 'popsicle@v10.0.0', null ]
+38 verbose cache add spec popsicle@v10.0.0
+39 silly cache add parsed spec Result {
+39 silly cache add   raw: 'popsicle@v10.0.0',
+39 silly cache add   scope: null,
+39 silly cache add   name: 'popsicle',
+39 silly cache add   rawSpec: 'v10.0.0',
+39 silly cache add   spec: '10.0.0',
+39 silly cache add   type: 'version' }
+40 silly addNamed popsicle@10.0.0
+41 verbose addNamed "10.0.0" is a plain semver version for popsicle
+42 silly mapToRegistry name popsicle
+43 silly mapToRegistry using default registry
+44 silly mapToRegistry registry https://registry.npmjs.org/
+45 silly mapToRegistry uri https://registry.npmjs.org/popsicle
+46 verbose addNameVersion registry:https://registry.npmjs.org/popsicle not in flight; fetching
+47 verbose get https://registry.npmjs.org/popsicle not expired, no request
+48 silly cache afterAdd popsicle@10.0.0
+49 verbose afterAdd /home/thor/.npm/popsicle/10.0.0/package/package.json not in flight; writing
+50 verbose afterAdd /home/thor/.npm/popsicle/10.0.0/package/package.json written
+51 silly fetchNamedPackageData concat-stream
+52 silly mapToRegistry name concat-stream
+53 silly mapToRegistry using default registry
+54 silly mapToRegistry registry https://registry.npmjs.org/
+55 silly mapToRegistry uri https://registry.npmjs.org/concat-stream
+56 silly fetchNamedPackageData make-error-cause
+57 silly mapToRegistry name make-error-cause
+58 silly mapToRegistry using default registry
+59 silly mapToRegistry registry https://registry.npmjs.org/
+60 silly mapToRegistry uri https://registry.npmjs.org/make-error-cause
+61 silly fetchNamedPackageData tough-cookie
+62 silly mapToRegistry name tough-cookie
+63 silly mapToRegistry using default registry
+64 silly mapToRegistry registry https://registry.npmjs.org/
+65 silly mapToRegistry uri https://registry.npmjs.org/tough-cookie
+66 verbose request uri https://registry.npmjs.org/concat-stream
+67 verbose request no auth needed
+68 info attempt registry request try #1 at 2:10:13 PM
+69 verbose etag W/"a3c10d5bcbef83c9ec5b7638d99dc3c4"
+70 verbose lastModified Wed, 10 Jul 2019 17:02:01 GMT
+71 http request GET https://registry.npmjs.org/concat-stream
+72 verbose request uri https://registry.npmjs.org/make-error-cause
+73 verbose request no auth needed
+74 info attempt registry request try #1 at 2:10:13 PM
+75 verbose etag W/"18afc2470c38a444be80976cd5f9eebb"
+76 verbose lastModified Wed, 06 Nov 2019 23:03:54 GMT
+77 http request GET https://registry.npmjs.org/make-error-cause
+78 verbose request uri https://registry.npmjs.org/tough-cookie
+79 verbose request no auth needed
+80 info attempt registry request try #1 at 2:10:13 PM
+81 verbose etag W/"f1d93d88b646bb4c354f8c481852a1b7"
+82 verbose lastModified Tue, 05 Feb 2019 03:09:49 GMT
+83 http request GET https://registry.npmjs.org/tough-cookie
+84 http 304 https://registry.npmjs.org/concat-stream
+85 verbose headers { date: 'Sat, 04 Jan 2020 19:10:11 GMT',
+85 verbose headers   connection: 'keep-alive',
+85 verbose headers   'set-cookie':
+85 verbose headers    [ '__cfduid=d659523db719555a99c011ef7d8a4b4ec1578165011; expires=Mon, 03-Feb-20 19:10:11 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+85 verbose headers   'cf-ray': '54ff82dcffdef349-ATL',
+85 verbose headers   age: '139',
+85 verbose headers   'cache-control': 'public, max-age=300',
+85 verbose headers   etag: '"a3c10d5bcbef83c9ec5b7638d99dc3c4"',
+85 verbose headers   'last-modified': 'Wed, 10 Jul 2019 17:02:01 GMT',
+85 verbose headers   vary: 'Accept-Encoding',
+85 verbose headers   'cf-cache-status': 'HIT',
+85 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+85 verbose headers   server: 'cloudflare' }
+86 silly get cb [ 304,
+86 silly get   { date: 'Sat, 04 Jan 2020 19:10:11 GMT',
+86 silly get     connection: 'keep-alive',
+86 silly get     'set-cookie':
+86 silly get      [ '__cfduid=d659523db719555a99c011ef7d8a4b4ec1578165011; expires=Mon, 03-Feb-20 19:10:11 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+86 silly get     'cf-ray': '54ff82dcffdef349-ATL',
+86 silly get     age: '139',
+86 silly get     'cache-control': 'public, max-age=300',
+86 silly get     etag: '"a3c10d5bcbef83c9ec5b7638d99dc3c4"',
+86 silly get     'last-modified': 'Wed, 10 Jul 2019 17:02:01 GMT',
+86 silly get     vary: 'Accept-Encoding',
+86 silly get     'cf-cache-status': 'HIT',
+86 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+86 silly get     server: 'cloudflare' } ]
+87 verbose etag https://registry.npmjs.org/concat-stream from cache
+88 verbose get saving concat-stream to /home/thor/.npm/registry.npmjs.org/concat-stream/.cache.json
+89 silly resolveWithNewModule concat-stream@1.6.2 checking installable status
+90 silly cache add args [ 'concat-stream@^1.4.7', null ]
+91 verbose cache add spec concat-stream@^1.4.7
+92 silly cache add parsed spec Result {
+92 silly cache add   raw: 'concat-stream@^1.4.7',
+92 silly cache add   scope: null,
+92 silly cache add   name: 'concat-stream',
+92 silly cache add   rawSpec: '^1.4.7',
+92 silly cache add   spec: '>=1.4.7 <2.0.0',
+92 silly cache add   type: 'range' }
+93 silly addNamed concat-stream@>=1.4.7 <2.0.0
+94 verbose addNamed ">=1.4.7 <2.0.0" is a valid semver range for concat-stream
+95 silly addNameRange { name: 'concat-stream',
+95 silly addNameRange   range: '>=1.4.7 <2.0.0',
+95 silly addNameRange   hasData: false }
+96 silly mapToRegistry name concat-stream
+97 silly mapToRegistry using default registry
+98 silly mapToRegistry registry https://registry.npmjs.org/
+99 silly mapToRegistry uri https://registry.npmjs.org/concat-stream
+100 verbose addNameRange registry:https://registry.npmjs.org/concat-stream not in flight; fetching
+101 verbose get https://registry.npmjs.org/concat-stream not expired, no request
+102 silly addNameRange number 2 { name: 'concat-stream', range: '>=1.4.7 <2.0.0', hasData: true }
+103 silly addNameRange versions [ 'concat-stream',
+103 silly addNameRange   [ '0.0.1',
+103 silly addNameRange     '0.0.2',
+103 silly addNameRange     '0.0.3',
+103 silly addNameRange     '0.0.4',
+103 silly addNameRange     '0.0.5',
+103 silly addNameRange     '0.0.6',
+103 silly addNameRange     '0.0.7',
+103 silly addNameRange     '0.0.8',
+103 silly addNameRange     '0.0.9',
+103 silly addNameRange     '0.1.0',
+103 silly addNameRange     '0.1.1',
+103 silly addNameRange     '1.0.0',
+103 silly addNameRange     '1.0.1',
+103 silly addNameRange     '1.1.0',
+103 silly addNameRange     '1.2.0',
+103 silly addNameRange     '1.2.1',
+103 silly addNameRange     '1.3.0',
+103 silly addNameRange     '1.3.1',
+103 silly addNameRange     '1.4.0',
+103 silly addNameRange     '1.4.1',
+103 silly addNameRange     '1.4.2',
+103 silly addNameRange     '1.4.3',
+103 silly addNameRange     '1.4.4',
+103 silly addNameRange     '1.4.5',
+103 silly addNameRange     '1.4.6',
+103 silly addNameRange     '1.4.7',
+103 silly addNameRange     '1.4.8',
+103 silly addNameRange     '1.4.10',
+103 silly addNameRange     '1.5.0',
+103 silly addNameRange     '1.5.1',
+103 silly addNameRange     '1.5.2',
+103 silly addNameRange     '1.6.0',
+103 silly addNameRange     '1.4.11',
+103 silly addNameRange     '1.3.2',
+103 silly addNameRange     '1.6.1',
+103 silly addNameRange     '1.6.2',
+103 silly addNameRange     '2.0.0' ] ]
+104 silly addNamed concat-stream@1.6.2
+105 verbose addNamed "1.6.2" is a plain semver version for concat-stream
+106 silly cache afterAdd concat-stream@1.6.2
+107 verbose afterAdd /home/thor/.npm/concat-stream/1.6.2/package/package.json not in flight; writing
+108 verbose afterAdd /home/thor/.npm/concat-stream/1.6.2/package/package.json written
+109 http 304 https://registry.npmjs.org/tough-cookie
+110 verbose headers { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+110 verbose headers   connection: 'keep-alive',
+110 verbose headers   'set-cookie':
+110 verbose headers    [ '__cfduid=d69b312bb0b13459845a360186d2f9ba51578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+110 verbose headers   'cf-ray': '54ff82ddb953f11a-IAD',
+110 verbose headers   age: '6293',
+110 verbose headers   'cache-control': 'public, max-age=300',
+110 verbose headers   etag: '"f1d93d88b646bb4c354f8c481852a1b7"',
+110 verbose headers   'last-modified': 'Tue, 05 Feb 2019 03:09:49 GMT',
+110 verbose headers   vary: 'Accept-Encoding',
+110 verbose headers   'cf-cache-status': 'HIT',
+110 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+110 verbose headers   server: 'cloudflare' }
+111 silly get cb [ 304,
+111 silly get   { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+111 silly get     connection: 'keep-alive',
+111 silly get     'set-cookie':
+111 silly get      [ '__cfduid=d69b312bb0b13459845a360186d2f9ba51578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+111 silly get     'cf-ray': '54ff82ddb953f11a-IAD',
+111 silly get     age: '6293',
+111 silly get     'cache-control': 'public, max-age=300',
+111 silly get     etag: '"f1d93d88b646bb4c354f8c481852a1b7"',
+111 silly get     'last-modified': 'Tue, 05 Feb 2019 03:09:49 GMT',
+111 silly get     vary: 'Accept-Encoding',
+111 silly get     'cf-cache-status': 'HIT',
+111 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+111 silly get     server: 'cloudflare' } ]
+112 verbose etag https://registry.npmjs.org/tough-cookie from cache
+113 verbose get saving tough-cookie to /home/thor/.npm/registry.npmjs.org/tough-cookie/.cache.json
+114 http 304 https://registry.npmjs.org/make-error-cause
+115 verbose headers { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+115 verbose headers   connection: 'keep-alive',
+115 verbose headers   'set-cookie':
+115 verbose headers    [ '__cfduid=d9ab5be2d3b4548ebd389edb6285a9ffa1578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+115 verbose headers   'cf-ray': '54ff82ddaec72412-IAD',
+115 verbose headers   age: '6458',
+115 verbose headers   'cache-control': 'public, max-age=300',
+115 verbose headers   etag: '"18afc2470c38a444be80976cd5f9eebb"',
+115 verbose headers   'last-modified': 'Wed, 06 Nov 2019 23:03:54 GMT',
+115 verbose headers   vary: 'Accept-Encoding',
+115 verbose headers   'cf-cache-status': 'HIT',
+115 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+115 verbose headers   server: 'cloudflare' }
+116 silly get cb [ 304,
+116 silly get   { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+116 silly get     connection: 'keep-alive',
+116 silly get     'set-cookie':
+116 silly get      [ '__cfduid=d9ab5be2d3b4548ebd389edb6285a9ffa1578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+116 silly get     'cf-ray': '54ff82ddaec72412-IAD',
+116 silly get     age: '6458',
+116 silly get     'cache-control': 'public, max-age=300',
+116 silly get     etag: '"18afc2470c38a444be80976cd5f9eebb"',
+116 silly get     'last-modified': 'Wed, 06 Nov 2019 23:03:54 GMT',
+116 silly get     vary: 'Accept-Encoding',
+116 silly get     'cf-cache-status': 'HIT',
+116 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+116 silly get     server: 'cloudflare' } ]
+117 verbose etag https://registry.npmjs.org/make-error-cause from cache
+118 verbose get saving make-error-cause to /home/thor/.npm/registry.npmjs.org/make-error-cause/.cache.json
+119 silly resolveWithNewModule tough-cookie@2.5.0 checking installable status
+120 silly cache add args [ 'tough-cookie@^2.0.0', null ]
+121 verbose cache add spec tough-cookie@^2.0.0
+122 silly cache add parsed spec Result {
+122 silly cache add   raw: 'tough-cookie@^2.0.0',
+122 silly cache add   scope: null,
+122 silly cache add   name: 'tough-cookie',
+122 silly cache add   rawSpec: '^2.0.0',
+122 silly cache add   spec: '>=2.0.0 <3.0.0',
+122 silly cache add   type: 'range' }
+123 silly addNamed tough-cookie@>=2.0.0 <3.0.0
+124 verbose addNamed ">=2.0.0 <3.0.0" is a valid semver range for tough-cookie
+125 silly addNameRange { name: 'tough-cookie', range: '>=2.0.0 <3.0.0', hasData: false }
+126 silly mapToRegistry name tough-cookie
+127 silly mapToRegistry using default registry
+128 silly mapToRegistry registry https://registry.npmjs.org/
+129 silly mapToRegistry uri https://registry.npmjs.org/tough-cookie
+130 verbose addNameRange registry:https://registry.npmjs.org/tough-cookie not in flight; fetching
+131 silly resolveWithNewModule make-error-cause@1.2.2 checking installable status
+132 silly cache add args [ 'make-error-cause@^1.2.1', null ]
+133 verbose cache add spec make-error-cause@^1.2.1
+134 silly cache add parsed spec Result {
+134 silly cache add   raw: 'make-error-cause@^1.2.1',
+134 silly cache add   scope: null,
+134 silly cache add   name: 'make-error-cause',
+134 silly cache add   rawSpec: '^1.2.1',
+134 silly cache add   spec: '>=1.2.1 <2.0.0',
+134 silly cache add   type: 'range' }
+135 silly addNamed make-error-cause@>=1.2.1 <2.0.0
+136 verbose addNamed ">=1.2.1 <2.0.0" is a valid semver range for make-error-cause
+137 silly addNameRange { name: 'make-error-cause',
+137 silly addNameRange   range: '>=1.2.1 <2.0.0',
+137 silly addNameRange   hasData: false }
+138 silly mapToRegistry name make-error-cause
+139 silly mapToRegistry using default registry
+140 silly mapToRegistry registry https://registry.npmjs.org/
+141 silly mapToRegistry uri https://registry.npmjs.org/make-error-cause
+142 verbose addNameRange registry:https://registry.npmjs.org/make-error-cause not in flight; fetching
+143 verbose get https://registry.npmjs.org/tough-cookie not expired, no request
+144 silly addNameRange number 2 { name: 'tough-cookie', range: '>=2.0.0 <3.0.0', hasData: true }
+145 silly addNameRange versions [ 'tough-cookie',
+145 silly addNameRange   [ '0.9.0',
+145 silly addNameRange     '0.9.1',
+145 silly addNameRange     '0.9.3',
+145 silly addNameRange     '0.9.4',
+145 silly addNameRange     '0.9.5',
+145 silly addNameRange     '0.9.6',
+145 silly addNameRange     '0.9.7',
+145 silly addNameRange     '0.9.8',
+145 silly addNameRange     '0.9.9',
+145 silly addNameRange     '0.9.11',
+145 silly addNameRange     '0.9.12',
+145 silly addNameRange     '0.9.13',
+145 silly addNameRange     '0.9.14',
+145 silly addNameRange     '0.9.15',
+145 silly addNameRange     '0.10.0',
+145 silly addNameRange     '0.11.0',
+145 silly addNameRange     '0.12.0',
+145 silly addNameRange     '0.12.1',
+145 silly addNameRange     '0.13.0',
+145 silly addNameRange     '1.0.0',
+145 silly addNameRange     '1.1.0',
+145 silly addNameRange     '1.2.0',
+145 silly addNameRange     '2.0.0',
+145 silly addNameRange     '2.1.0',
+145 silly addNameRange     '2.2.0',
+145 silly addNameRange     '2.2.1',
+145 silly addNameRange     '2.2.2',
+145 silly addNameRange     '2.3.0',
+145 silly addNameRange     '2.3.1',
+145 silly addNameRange     '2.3.2',
+145 silly addNameRange     '2.3.3',
+145 silly addNameRange     '2.3.4',
+145 silly addNameRange     '2.4.2',
+145 silly addNameRange     '2.4.3',
+145 silly addNameRange     '2.5.0',
+145 silly addNameRange     '3.0.0',
+145 silly addNameRange     '3.0.1' ] ]
+146 silly addNamed tough-cookie@2.5.0
+147 verbose addNamed "2.5.0" is a plain semver version for tough-cookie
+148 verbose get https://registry.npmjs.org/make-error-cause not expired, no request
+149 silly addNameRange number 2 { name: 'make-error-cause',
+149 silly addNameRange   range: '>=1.2.1 <2.0.0',
+149 silly addNameRange   hasData: true }
+150 silly addNameRange versions [ 'make-error-cause',
+150 silly addNameRange   [ '1.0.0',
+150 silly addNameRange     '1.0.1',
+150 silly addNameRange     '1.0.2',
+150 silly addNameRange     '1.1.0',
+150 silly addNameRange     '1.1.1',
+150 silly addNameRange     '1.2.0',
+150 silly addNameRange     '1.2.1',
+150 silly addNameRange     '1.2.2',
+150 silly addNameRange     '2.0.0',
+150 silly addNameRange     '2.1.0',
+150 silly addNameRange     '2.2.0',
+150 silly addNameRange     '2.2.1',
+150 silly addNameRange     '2.3.0' ] ]
+151 silly addNamed make-error-cause@1.2.2
+152 verbose addNamed "1.2.2" is a plain semver version for make-error-cause
+153 silly cache afterAdd tough-cookie@2.5.0
+154 verbose afterAdd /home/thor/.npm/tough-cookie/2.5.0/package/package.json not in flight; writing
+155 silly cache afterAdd make-error-cause@1.2.2
+156 verbose afterAdd /home/thor/.npm/make-error-cause/1.2.2/package/package.json not in flight; writing
+157 verbose afterAdd /home/thor/.npm/tough-cookie/2.5.0/package/package.json written
+158 verbose afterAdd /home/thor/.npm/make-error-cause/1.2.2/package/package.json written
+159 silly fetchNamedPackageData readable-stream
+160 silly mapToRegistry name readable-stream
+161 silly mapToRegistry using default registry
+162 silly mapToRegistry registry https://registry.npmjs.org/
+163 silly mapToRegistry uri https://registry.npmjs.org/readable-stream
+164 verbose request uri https://registry.npmjs.org/readable-stream
+165 verbose request no auth needed
+166 info attempt registry request try #1 at 2:10:13 PM
+167 verbose etag W/"af3b07933aba69dcfb76cf68841f0f03"
+168 verbose lastModified Tue, 28 May 2019 05:57:26 GMT
+169 http request GET https://registry.npmjs.org/readable-stream
+170 http 304 https://registry.npmjs.org/readable-stream
+171 verbose headers { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+171 verbose headers   connection: 'keep-alive',
+171 verbose headers   'set-cookie':
+171 verbose headers    [ '__cfduid=d29394beecb00c97d50a34a8d6716792e1578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+171 verbose headers   'cf-ray': '54ff82de09b7f349-ATL',
+171 verbose headers   age: '4821',
+171 verbose headers   'cache-control': 'public, max-age=300',
+171 verbose headers   etag: '"af3b07933aba69dcfb76cf68841f0f03"',
+171 verbose headers   'last-modified': 'Tue, 28 May 2019 05:57:26 GMT',
+171 verbose headers   vary: 'Accept-Encoding',
+171 verbose headers   'cf-cache-status': 'HIT',
+171 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+171 verbose headers   server: 'cloudflare' }
+172 silly get cb [ 304,
+172 silly get   { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+172 silly get     connection: 'keep-alive',
+172 silly get     'set-cookie':
+172 silly get      [ '__cfduid=d29394beecb00c97d50a34a8d6716792e1578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+172 silly get     'cf-ray': '54ff82de09b7f349-ATL',
+172 silly get     age: '4821',
+172 silly get     'cache-control': 'public, max-age=300',
+172 silly get     etag: '"af3b07933aba69dcfb76cf68841f0f03"',
+172 silly get     'last-modified': 'Tue, 28 May 2019 05:57:26 GMT',
+172 silly get     vary: 'Accept-Encoding',
+172 silly get     'cf-cache-status': 'HIT',
+172 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+172 silly get     server: 'cloudflare' } ]
+173 verbose etag https://registry.npmjs.org/readable-stream from cache
+174 verbose get saving readable-stream to /home/thor/.npm/registry.npmjs.org/readable-stream/.cache.json
+175 silly resolveWithNewModule readable-stream@2.3.6 checking installable status
+176 silly cache add args [ 'readable-stream@^2.2.2', null ]
+177 verbose cache add spec readable-stream@^2.2.2
+178 silly cache add parsed spec Result {
+178 silly cache add   raw: 'readable-stream@^2.2.2',
+178 silly cache add   scope: null,
+178 silly cache add   name: 'readable-stream',
+178 silly cache add   rawSpec: '^2.2.2',
+178 silly cache add   spec: '>=2.2.2 <3.0.0',
+178 silly cache add   type: 'range' }
+179 silly addNamed readable-stream@>=2.2.2 <3.0.0
+180 verbose addNamed ">=2.2.2 <3.0.0" is a valid semver range for readable-stream
+181 silly addNameRange { name: 'readable-stream',
+181 silly addNameRange   range: '>=2.2.2 <3.0.0',
+181 silly addNameRange   hasData: false }
+182 silly mapToRegistry name readable-stream
+183 silly mapToRegistry using default registry
+184 silly mapToRegistry registry https://registry.npmjs.org/
+185 silly mapToRegistry uri https://registry.npmjs.org/readable-stream
+186 verbose addNameRange registry:https://registry.npmjs.org/readable-stream not in flight; fetching
+187 verbose get https://registry.npmjs.org/readable-stream not expired, no request
+188 silly addNameRange number 2 { name: 'readable-stream',
+188 silly addNameRange   range: '>=2.2.2 <3.0.0',
+188 silly addNameRange   hasData: true }
+189 silly addNameRange versions [ 'readable-stream',
+189 silly addNameRange   [ '0.0.1',
+189 silly addNameRange     '0.0.2',
+189 silly addNameRange     '0.0.3',
+189 silly addNameRange     '0.0.4',
+189 silly addNameRange     '0.1.0',
+189 silly addNameRange     '0.2.0',
+189 silly addNameRange     '0.3.0',
+189 silly addNameRange     '0.3.1',
+189 silly addNameRange     '1.0.0',
+189 silly addNameRange     '1.0.1',
+189 silly addNameRange     '1.0.2',
+189 silly addNameRange     '1.0.15',
+189 silly addNameRange     '1.0.17',
+189 silly addNameRange     '1.1.7',
+189 silly addNameRange     '1.1.8',
+189 silly addNameRange     '1.1.9',
+189 silly addNameRange     '1.0.24',
+189 silly addNameRange     '1.0.25',
+189 silly addNameRange     '1.1.10',
+189 silly addNameRange     '1.0.25-1',
+189 silly addNameRange     '1.1.11',
+189 silly addNameRange     '1.0.26',
+189 silly addNameRange     '1.0.26-1',
+189 silly addNameRange     '1.1.11-1',
+189 silly addNameRange     '1.0.26-2',
+189 silly addNameRange     '1.1.12',
+189 silly addNameRange     '1.0.26-3',
+189 silly addNameRange     '1.0.26-4',
+189 silly addNameRange     '1.1.12-1',
+189 silly addNameRange     '1.0.27-1',
+189 silly addNameRange     '1.1.13-1',
+189 silly addNameRange     '1.0.31',
+189 silly addNameRange     '1.1.13',
+189 silly addNameRange     '1.0.32',
+189 silly addNameRange     '1.0.32-1',
+189 silly addNameRange     '1.0.33-1',
+189 silly addNameRange     '1.0.33-2',
+189 silly addNameRange     '1.0.33',
+189 silly addNameRange     '2.0.0',
+189 silly addNameRange     '2.0.1',
+189 silly addNameRange     '2.0.2',
+189 silly addNameRange     '2.0.3',
+189 silly addNameRange     '2.0.4',
+189 silly addNameRange     '2.0.5',
+189 silly addNameRange     '2.0.6',
+189 silly addNameRange     '1.0.34',
+189 silly addNameRange     '1.1.14',
+189 silly addNameRange     '2.1.0',
+189 silly addNameRange     '2.1.1',
+189 silly addNameRange     '2.1.2',
+189 silly addNameRange     '2.1.3',
+189 silly addNameRange     '2.1.4',
+189 silly addNameRange     '2.1.5',
+189 silly addNameRange     '2.2.0',
+189 silly addNameRange     '2.2.1',
+189 silly addNameRange     '2.2.2',
+189 silly addNameRange     '2.2.3',
+189 silly addNameRange     '2.2.4',
+189 silly addNameRange     '2.2.5',
+189 silly addNameRange     '2.2.6',
+189 silly addNameRange     '2.2.7',
+189 silly addNameRange     '2.2.8',
+189 silly addNameRange     '2.2.9',
+189 silly addNameRange     '2.2.10',
+189 silly addNameRange     '2.2.11',
+189 silly addNameRange     '2.3.0',
+189 silly addNameRange     '2.3.1',
+189 silly addNameRange     '2.3.2',
+189 silly addNameRange     '2.3.3',
+189 silly addNameRange     '2.3.4',
+189 silly addNameRange     '2.3.5',
+189 silly addNameRange     '2.3.6',
+189 silly addNameRange     '3.0.0-rc.1',
+189 silly addNameRange     '3.0.0-rc.2',
+189 silly addNameRange     '3.0.0-rc.3',
+189 silly addNameRange     '3.0.0',
+189 silly addNameRange     '3.0.1',
+189 silly addNameRange     '3.0.2',
+189 silly addNameRange     '3.0.3',
+189 silly addNameRange     '3.0.4',
+189 silly addNameRange     '3.0.5',
+189 silly addNameRange     '3.0.6',
+189 silly addNameRange     '3.1.0',
+189 silly addNameRange     '3.1.1',
+189 silly addNameRange     '3.2.0',
+189 silly addNameRange     '3.3.0',
+189 silly addNameRange     '3.4.0' ] ]
+190 silly addNamed readable-stream@2.3.6
+191 verbose addNamed "2.3.6" is a plain semver version for readable-stream
+192 silly cache afterAdd readable-stream@2.3.6
+193 verbose afterAdd /home/thor/.npm/readable-stream/2.3.6/package/package.json not in flight; writing
+194 verbose afterAdd /home/thor/.npm/readable-stream/2.3.6/package/package.json written
+195 silly fetchNamedPackageData isarray
+196 silly mapToRegistry name isarray
+197 silly mapToRegistry using default registry
+198 silly mapToRegistry registry https://registry.npmjs.org/
+199 silly mapToRegistry uri https://registry.npmjs.org/isarray
+200 silly fetchNamedPackageData process-nextick-args
+201 silly mapToRegistry name process-nextick-args
+202 silly mapToRegistry using default registry
+203 silly mapToRegistry registry https://registry.npmjs.org/
+204 silly mapToRegistry uri https://registry.npmjs.org/process-nextick-args
+205 silly fetchNamedPackageData safe-buffer
+206 silly mapToRegistry name safe-buffer
+207 silly mapToRegistry using default registry
+208 silly mapToRegistry registry https://registry.npmjs.org/
+209 silly mapToRegistry uri https://registry.npmjs.org/safe-buffer
+210 silly fetchNamedPackageData string_decoder
+211 silly mapToRegistry name string_decoder
+212 silly mapToRegistry using default registry
+213 silly mapToRegistry registry https://registry.npmjs.org/
+214 silly mapToRegistry uri https://registry.npmjs.org/string_decoder
+215 silly fetchNamedPackageData util-deprecate
+216 silly mapToRegistry name util-deprecate
+217 silly mapToRegistry using default registry
+218 silly mapToRegistry registry https://registry.npmjs.org/
+219 silly mapToRegistry uri https://registry.npmjs.org/util-deprecate
+220 verbose request uri https://registry.npmjs.org/process-nextick-args
+221 verbose request no auth needed
+222 info attempt registry request try #1 at 2:10:13 PM
+223 verbose etag W/"58d0a4cf2900b1705718975f98323cbd"
+224 verbose lastModified Wed, 19 Jun 2019 20:34:45 GMT
+225 http request GET https://registry.npmjs.org/process-nextick-args
+226 verbose request uri https://registry.npmjs.org/string_decoder
+227 verbose request no auth needed
+228 info attempt registry request try #1 at 2:10:13 PM
+229 verbose etag W/"0a93d953e853f8bf50ba2c73d36557a6"
+230 verbose lastModified Wed, 07 Aug 2019 09:20:40 GMT
+231 http request GET https://registry.npmjs.org/string_decoder
+232 verbose request uri https://registry.npmjs.org/safe-buffer
+233 verbose request no auth needed
+234 info attempt registry request try #1 at 2:10:13 PM
+235 verbose etag W/"00b820fed08175238fc3473b2b3e0278"
+236 verbose lastModified Fri, 05 Jul 2019 18:04:37 GMT
+237 http request GET https://registry.npmjs.org/safe-buffer
+238 verbose request uri https://registry.npmjs.org/isarray
+239 verbose request no auth needed
+240 info attempt registry request try #1 at 2:10:13 PM
+241 verbose etag W/"f8d13869b081e2301428e8269cb470a1"
+242 verbose lastModified Mon, 08 Jul 2019 13:21:26 GMT
+243 http request GET https://registry.npmjs.org/isarray
+244 verbose request uri https://registry.npmjs.org/util-deprecate
+245 verbose request no auth needed
+246 info attempt registry request try #1 at 2:10:13 PM
+247 verbose etag W/"d116b09e4cac1e1e657ea3ce533e5631"
+248 verbose lastModified Sun, 27 May 2018 20:38:18 GMT
+249 http request GET https://registry.npmjs.org/util-deprecate
+250 http 304 https://registry.npmjs.org/safe-buffer
+251 verbose headers { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+251 verbose headers   connection: 'keep-alive',
+251 verbose headers   'set-cookie':
+251 verbose headers    [ '__cfduid=d29394beecb00c97d50a34a8d6716792e1578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+251 verbose headers   'cf-ray': '54ff82de6a4cf349-ATL',
+251 verbose headers   age: '2503',
+251 verbose headers   'cache-control': 'public, max-age=300',
+251 verbose headers   etag: '"00b820fed08175238fc3473b2b3e0278"',
+251 verbose headers   'last-modified': 'Fri, 05 Jul 2019 18:04:37 GMT',
+251 verbose headers   vary: 'Accept-Encoding',
+251 verbose headers   'cf-cache-status': 'HIT',
+251 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+251 verbose headers   server: 'cloudflare' }
+252 silly get cb [ 304,
+252 silly get   { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+252 silly get     connection: 'keep-alive',
+252 silly get     'set-cookie':
+252 silly get      [ '__cfduid=d29394beecb00c97d50a34a8d6716792e1578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+252 silly get     'cf-ray': '54ff82de6a4cf349-ATL',
+252 silly get     age: '2503',
+252 silly get     'cache-control': 'public, max-age=300',
+252 silly get     etag: '"00b820fed08175238fc3473b2b3e0278"',
+252 silly get     'last-modified': 'Fri, 05 Jul 2019 18:04:37 GMT',
+252 silly get     vary: 'Accept-Encoding',
+252 silly get     'cf-cache-status': 'HIT',
+252 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+252 silly get     server: 'cloudflare' } ]
+253 verbose etag https://registry.npmjs.org/safe-buffer from cache
+254 verbose get saving safe-buffer to /home/thor/.npm/registry.npmjs.org/safe-buffer/.cache.json
+255 silly resolveWithNewModule safe-buffer@5.1.2 checking installable status
+256 silly cache add args [ 'safe-buffer@~5.1.1', null ]
+257 verbose cache add spec safe-buffer@~5.1.1
+258 silly cache add parsed spec Result {
+258 silly cache add   raw: 'safe-buffer@~5.1.1',
+258 silly cache add   scope: null,
+258 silly cache add   name: 'safe-buffer',
+258 silly cache add   rawSpec: '~5.1.1',
+258 silly cache add   spec: '>=5.1.1 <5.2.0',
+258 silly cache add   type: 'range' }
+259 silly addNamed safe-buffer@>=5.1.1 <5.2.0
+260 verbose addNamed ">=5.1.1 <5.2.0" is a valid semver range for safe-buffer
+261 silly addNameRange { name: 'safe-buffer', range: '>=5.1.1 <5.2.0', hasData: false }
+262 silly mapToRegistry name safe-buffer
+263 silly mapToRegistry using default registry
+264 silly mapToRegistry registry https://registry.npmjs.org/
+265 silly mapToRegistry uri https://registry.npmjs.org/safe-buffer
+266 verbose addNameRange registry:https://registry.npmjs.org/safe-buffer not in flight; fetching
+267 verbose get https://registry.npmjs.org/safe-buffer not expired, no request
+268 silly addNameRange number 2 { name: 'safe-buffer', range: '>=5.1.1 <5.2.0', hasData: true }
+269 silly addNameRange versions [ 'safe-buffer',
+269 silly addNameRange   [ '1.0.0',
+269 silly addNameRange     '2.0.0',
+269 silly addNameRange     '3.0.0',
+269 silly addNameRange     '4.0.0',
+269 silly addNameRange     '5.0.0',
+269 silly addNameRange     '5.0.1',
+269 silly addNameRange     '5.1.0',
+269 silly addNameRange     '5.1.1',
+269 silly addNameRange     '5.1.2',
+269 silly addNameRange     '5.2.0' ] ]
+270 silly addNamed safe-buffer@5.1.2
+271 verbose addNamed "5.1.2" is a plain semver version for safe-buffer
+272 http 304 https://registry.npmjs.org/process-nextick-args
+273 verbose headers { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+273 verbose headers   connection: 'keep-alive',
+273 verbose headers   'set-cookie':
+273 verbose headers    [ '__cfduid=d69b312bb0b13459845a360186d2f9ba51578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+273 verbose headers   'cf-ray': '54ff82de6a95f11a-IAD',
+273 verbose headers   age: '5582',
+273 verbose headers   'cache-control': 'public, max-age=300',
+273 verbose headers   etag: '"58d0a4cf2900b1705718975f98323cbd"',
+273 verbose headers   'last-modified': 'Wed, 19 Jun 2019 20:34:45 GMT',
+273 verbose headers   vary: 'Accept-Encoding',
+273 verbose headers   'cf-cache-status': 'HIT',
+273 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+273 verbose headers   server: 'cloudflare' }
+274 silly get cb [ 304,
+274 silly get   { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+274 silly get     connection: 'keep-alive',
+274 silly get     'set-cookie':
+274 silly get      [ '__cfduid=d69b312bb0b13459845a360186d2f9ba51578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+274 silly get     'cf-ray': '54ff82de6a95f11a-IAD',
+274 silly get     age: '5582',
+274 silly get     'cache-control': 'public, max-age=300',
+274 silly get     etag: '"58d0a4cf2900b1705718975f98323cbd"',
+274 silly get     'last-modified': 'Wed, 19 Jun 2019 20:34:45 GMT',
+274 silly get     vary: 'Accept-Encoding',
+274 silly get     'cf-cache-status': 'HIT',
+274 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+274 silly get     server: 'cloudflare' } ]
+275 verbose etag https://registry.npmjs.org/process-nextick-args from cache
+276 verbose get saving process-nextick-args to /home/thor/.npm/registry.npmjs.org/process-nextick-args/.cache.json
+277 silly cache afterAdd safe-buffer@5.1.2
+278 verbose afterAdd /home/thor/.npm/safe-buffer/5.1.2/package/package.json not in flight; writing
+279 silly resolveWithNewModule process-nextick-args@2.0.1 checking installable status
+280 silly cache add args [ 'process-nextick-args@~2.0.0', null ]
+281 verbose cache add spec process-nextick-args@~2.0.0
+282 silly cache add parsed spec Result {
+282 silly cache add   raw: 'process-nextick-args@~2.0.0',
+282 silly cache add   scope: null,
+282 silly cache add   name: 'process-nextick-args',
+282 silly cache add   rawSpec: '~2.0.0',
+282 silly cache add   spec: '>=2.0.0 <2.1.0',
+282 silly cache add   type: 'range' }
+283 silly addNamed process-nextick-args@>=2.0.0 <2.1.0
+284 verbose addNamed ">=2.0.0 <2.1.0" is a valid semver range for process-nextick-args
+285 silly addNameRange { name: 'process-nextick-args',
+285 silly addNameRange   range: '>=2.0.0 <2.1.0',
+285 silly addNameRange   hasData: false }
+286 silly mapToRegistry name process-nextick-args
+287 silly mapToRegistry using default registry
+288 silly mapToRegistry registry https://registry.npmjs.org/
+289 silly mapToRegistry uri https://registry.npmjs.org/process-nextick-args
+290 verbose addNameRange registry:https://registry.npmjs.org/process-nextick-args not in flight; fetching
+291 verbose afterAdd /home/thor/.npm/safe-buffer/5.1.2/package/package.json written
+292 verbose get https://registry.npmjs.org/process-nextick-args not expired, no request
+293 silly addNameRange number 2 { name: 'process-nextick-args',
+293 silly addNameRange   range: '>=2.0.0 <2.1.0',
+293 silly addNameRange   hasData: true }
+294 silly addNameRange versions [ 'process-nextick-args',
+294 silly addNameRange   [ '1.0.0',
+294 silly addNameRange     '1.0.1',
+294 silly addNameRange     '1.0.2',
+294 silly addNameRange     '1.0.3',
+294 silly addNameRange     '1.0.4',
+294 silly addNameRange     '1.0.5',
+294 silly addNameRange     '1.0.6',
+294 silly addNameRange     '1.0.7',
+294 silly addNameRange     '2.0.0',
+294 silly addNameRange     '2.0.1' ] ]
+295 silly addNamed process-nextick-args@2.0.1
+296 verbose addNamed "2.0.1" is a plain semver version for process-nextick-args
+297 http 304 https://registry.npmjs.org/string_decoder
+298 verbose headers { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+298 verbose headers   connection: 'keep-alive',
+298 verbose headers   'set-cookie':
+298 verbose headers    [ '__cfduid=d9ab5be2d3b4548ebd389edb6285a9ffa1578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+298 verbose headers   'cf-ray': '54ff82de7ef82412-IAD',
+298 verbose headers   age: '3440',
+298 verbose headers   'cache-control': 'public, max-age=300',
+298 verbose headers   etag: '"0a93d953e853f8bf50ba2c73d36557a6"',
+298 verbose headers   'last-modified': 'Wed, 07 Aug 2019 09:20:40 GMT',
+298 verbose headers   vary: 'Accept-Encoding',
+298 verbose headers   'cf-cache-status': 'HIT',
+298 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+298 verbose headers   server: 'cloudflare' }
+299 silly get cb [ 304,
+299 silly get   { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+299 silly get     connection: 'keep-alive',
+299 silly get     'set-cookie':
+299 silly get      [ '__cfduid=d9ab5be2d3b4548ebd389edb6285a9ffa1578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+299 silly get     'cf-ray': '54ff82de7ef82412-IAD',
+299 silly get     age: '3440',
+299 silly get     'cache-control': 'public, max-age=300',
+299 silly get     etag: '"0a93d953e853f8bf50ba2c73d36557a6"',
+299 silly get     'last-modified': 'Wed, 07 Aug 2019 09:20:40 GMT',
+299 silly get     vary: 'Accept-Encoding',
+299 silly get     'cf-cache-status': 'HIT',
+299 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+299 silly get     server: 'cloudflare' } ]
+300 verbose etag https://registry.npmjs.org/string_decoder from cache
+301 verbose get saving string_decoder to /home/thor/.npm/registry.npmjs.org/string_decoder/.cache.json
+302 silly cache afterAdd process-nextick-args@2.0.1
+303 verbose afterAdd /home/thor/.npm/process-nextick-args/2.0.1/package/package.json not in flight; writing
+304 silly resolveWithNewModule string_decoder@1.1.1 checking installable status
+305 silly cache add args [ 'string_decoder@~1.1.1', null ]
+306 verbose cache add spec string_decoder@~1.1.1
+307 silly cache add parsed spec Result {
+307 silly cache add   raw: 'string_decoder@~1.1.1',
+307 silly cache add   scope: null,
+307 silly cache add   name: 'string_decoder',
+307 silly cache add   rawSpec: '~1.1.1',
+307 silly cache add   spec: '>=1.1.1 <1.2.0',
+307 silly cache add   type: 'range' }
+308 silly addNamed string_decoder@>=1.1.1 <1.2.0
+309 verbose addNamed ">=1.1.1 <1.2.0" is a valid semver range for string_decoder
+310 silly addNameRange { name: 'string_decoder',
+310 silly addNameRange   range: '>=1.1.1 <1.2.0',
+310 silly addNameRange   hasData: false }
+311 silly mapToRegistry name string_decoder
+312 silly mapToRegistry using default registry
+313 silly mapToRegistry registry https://registry.npmjs.org/
+314 silly mapToRegistry uri https://registry.npmjs.org/string_decoder
+315 verbose addNameRange registry:https://registry.npmjs.org/string_decoder not in flight; fetching
+316 verbose afterAdd /home/thor/.npm/process-nextick-args/2.0.1/package/package.json written
+317 verbose get https://registry.npmjs.org/string_decoder not expired, no request
+318 silly addNameRange number 2 { name: 'string_decoder',
+318 silly addNameRange   range: '>=1.1.1 <1.2.0',
+318 silly addNameRange   hasData: true }
+319 silly addNameRange versions [ 'string_decoder',
+319 silly addNameRange   [ '0.0.0',
+319 silly addNameRange     '0.0.1',
+319 silly addNameRange     '0.10.24',
+319 silly addNameRange     '0.11.10',
+319 silly addNameRange     '0.10.25',
+319 silly addNameRange     '0.11.10-1',
+319 silly addNameRange     '0.10.25-1',
+319 silly addNameRange     '0.10.31',
+319 silly addNameRange     '1.0.0',
+319 silly addNameRange     '1.0.1',
+319 silly addNameRange     '1.0.2',
+319 silly addNameRange     '1.0.3',
+319 silly addNameRange     '1.1.0',
+319 silly addNameRange     '1.1.1',
+319 silly addNameRange     '1.2.0',
+319 silly addNameRange     '1.3.0' ] ]
+320 silly addNamed string_decoder@1.1.1
+321 verbose addNamed "1.1.1" is a plain semver version for string_decoder
+322 silly cache afterAdd string_decoder@1.1.1
+323 verbose afterAdd /home/thor/.npm/string_decoder/1.1.1/package/package.json not in flight; writing
+324 verbose afterAdd /home/thor/.npm/string_decoder/1.1.1/package/package.json written
+325 http 304 https://registry.npmjs.org/isarray
+326 verbose headers { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+326 verbose headers   connection: 'keep-alive',
+326 verbose headers   'set-cookie':
+326 verbose headers    [ '__cfduid=d0f0257d96e23b11cdbe53cb0f308a6f81578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+326 verbose headers   'cf-ray': '54ff82dedfc737f0-ATL',
+326 verbose headers   age: '4883',
+326 verbose headers   'cache-control': 'public, max-age=300',
+326 verbose headers   etag: '"f8d13869b081e2301428e8269cb470a1"',
+326 verbose headers   'last-modified': 'Mon, 08 Jul 2019 13:21:26 GMT',
+326 verbose headers   vary: 'Accept-Encoding',
+326 verbose headers   'cf-cache-status': 'HIT',
+326 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+326 verbose headers   server: 'cloudflare' }
+327 silly get cb [ 304,
+327 silly get   { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+327 silly get     connection: 'keep-alive',
+327 silly get     'set-cookie':
+327 silly get      [ '__cfduid=d0f0257d96e23b11cdbe53cb0f308a6f81578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+327 silly get     'cf-ray': '54ff82dedfc737f0-ATL',
+327 silly get     age: '4883',
+327 silly get     'cache-control': 'public, max-age=300',
+327 silly get     etag: '"f8d13869b081e2301428e8269cb470a1"',
+327 silly get     'last-modified': 'Mon, 08 Jul 2019 13:21:26 GMT',
+327 silly get     vary: 'Accept-Encoding',
+327 silly get     'cf-cache-status': 'HIT',
+327 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+327 silly get     server: 'cloudflare' } ]
+328 verbose etag https://registry.npmjs.org/isarray from cache
+329 verbose get saving isarray to /home/thor/.npm/registry.npmjs.org/isarray/.cache.json
+330 silly resolveWithNewModule isarray@1.0.0 checking installable status
+331 silly cache add args [ 'isarray@~1.0.0', null ]
+332 verbose cache add spec isarray@~1.0.0
+333 silly cache add parsed spec Result {
+333 silly cache add   raw: 'isarray@~1.0.0',
+333 silly cache add   scope: null,
+333 silly cache add   name: 'isarray',
+333 silly cache add   rawSpec: '~1.0.0',
+333 silly cache add   spec: '>=1.0.0 <1.1.0',
+333 silly cache add   type: 'range' }
+334 silly addNamed isarray@>=1.0.0 <1.1.0
+335 verbose addNamed ">=1.0.0 <1.1.0" is a valid semver range for isarray
+336 silly addNameRange { name: 'isarray', range: '>=1.0.0 <1.1.0', hasData: false }
+337 silly mapToRegistry name isarray
+338 silly mapToRegistry using default registry
+339 silly mapToRegistry registry https://registry.npmjs.org/
+340 silly mapToRegistry uri https://registry.npmjs.org/isarray
+341 verbose addNameRange registry:https://registry.npmjs.org/isarray not in flight; fetching
+342 verbose get https://registry.npmjs.org/isarray not expired, no request
+343 silly addNameRange number 2 { name: 'isarray', range: '>=1.0.0 <1.1.0', hasData: true }
+344 silly addNameRange versions [ 'isarray',
+344 silly addNameRange   [ '0.0.0',
+344 silly addNameRange     '0.0.1',
+344 silly addNameRange     '1.0.0',
+344 silly addNameRange     '2.0.0',
+344 silly addNameRange     '2.0.1',
+344 silly addNameRange     '2.0.2',
+344 silly addNameRange     '2.0.3',
+344 silly addNameRange     '2.0.4',
+344 silly addNameRange     '2.0.5' ] ]
+345 silly addNamed isarray@1.0.0
+346 verbose addNamed "1.0.0" is a plain semver version for isarray
+347 silly cache afterAdd isarray@1.0.0
+348 verbose afterAdd /home/thor/.npm/isarray/1.0.0/package/package.json not in flight; writing
+349 verbose afterAdd /home/thor/.npm/isarray/1.0.0/package/package.json written
+350 http 304 https://registry.npmjs.org/util-deprecate
+351 verbose headers { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+351 verbose headers   connection: 'keep-alive',
+351 verbose headers   'set-cookie':
+351 verbose headers    [ '__cfduid=d432c5bd5de39eee673fd3884d67beab81578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+351 verbose headers   'cf-ray': '54ff82dedddd56fd-IAD',
+351 verbose headers   age: '1264',
+351 verbose headers   'cache-control': 'public, max-age=300',
+351 verbose headers   etag: '"d116b09e4cac1e1e657ea3ce533e5631"',
+351 verbose headers   'last-modified': 'Sun, 27 May 2018 20:38:18 GMT',
+351 verbose headers   vary: 'Accept-Encoding',
+351 verbose headers   'cf-cache-status': 'HIT',
+351 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+351 verbose headers   server: 'cloudflare' }
+352 silly get cb [ 304,
+352 silly get   { date: 'Sat, 04 Jan 2020 19:10:12 GMT',
+352 silly get     connection: 'keep-alive',
+352 silly get     'set-cookie':
+352 silly get      [ '__cfduid=d432c5bd5de39eee673fd3884d67beab81578165012; expires=Mon, 03-Feb-20 19:10:12 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+352 silly get     'cf-ray': '54ff82dedddd56fd-IAD',
+352 silly get     age: '1264',
+352 silly get     'cache-control': 'public, max-age=300',
+352 silly get     etag: '"d116b09e4cac1e1e657ea3ce533e5631"',
+352 silly get     'last-modified': 'Sun, 27 May 2018 20:38:18 GMT',
+352 silly get     vary: 'Accept-Encoding',
+352 silly get     'cf-cache-status': 'HIT',
+352 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+352 silly get     server: 'cloudflare' } ]
+353 verbose etag https://registry.npmjs.org/util-deprecate from cache
+354 verbose get saving util-deprecate to /home/thor/.npm/registry.npmjs.org/util-deprecate/.cache.json
+355 silly resolveWithNewModule util-deprecate@1.0.2 checking installable status
+356 silly cache add args [ 'util-deprecate@~1.0.1', null ]
+357 verbose cache add spec util-deprecate@~1.0.1
+358 silly cache add parsed spec Result {
+358 silly cache add   raw: 'util-deprecate@~1.0.1',
+358 silly cache add   scope: null,
+358 silly cache add   name: 'util-deprecate',
+358 silly cache add   rawSpec: '~1.0.1',
+358 silly cache add   spec: '>=1.0.1 <1.1.0',
+358 silly cache add   type: 'range' }
+359 silly addNamed util-deprecate@>=1.0.1 <1.1.0
+360 verbose addNamed ">=1.0.1 <1.1.0" is a valid semver range for util-deprecate
+361 silly addNameRange { name: 'util-deprecate',
+361 silly addNameRange   range: '>=1.0.1 <1.1.0',
+361 silly addNameRange   hasData: false }
+362 silly mapToRegistry name util-deprecate
+363 silly mapToRegistry using default registry
+364 silly mapToRegistry registry https://registry.npmjs.org/
+365 silly mapToRegistry uri https://registry.npmjs.org/util-deprecate
+366 verbose addNameRange registry:https://registry.npmjs.org/util-deprecate not in flight; fetching
+367 verbose get https://registry.npmjs.org/util-deprecate not expired, no request
+368 silly addNameRange number 2 { name: 'util-deprecate',
+368 silly addNameRange   range: '>=1.0.1 <1.1.0',
+368 silly addNameRange   hasData: true }
+369 silly addNameRange versions [ 'util-deprecate', [ '1.0.0', '1.0.1', '1.0.2' ] ]
+370 silly addNamed util-deprecate@1.0.2
+371 verbose addNamed "1.0.2" is a plain semver version for util-deprecate
+372 silly cache afterAdd util-deprecate@1.0.2
+373 verbose afterAdd /home/thor/.npm/util-deprecate/1.0.2/package/package.json not in flight; writing
+374 verbose afterAdd /home/thor/.npm/util-deprecate/1.0.2/package/package.json written
+375 silly fetchNamedPackageData safe-buffer
+376 silly mapToRegistry name safe-buffer
+377 silly mapToRegistry using default registry
+378 silly mapToRegistry registry https://registry.npmjs.org/
+379 silly mapToRegistry uri https://registry.npmjs.org/safe-buffer
+380 silly loadAllDepsIntoIdealTree Finishing
+381 silly idealTree:prePrune node-red-node-fitbit2@1.0.0
+381 silly idealTree:prePrune ├── @servie/events@1.0.0
+381 silly idealTree:prePrune ├── @types/concat-stream@1.6.0
+381 silly idealTree:prePrune ├── @types/form-data@0.0.33
+381 silly idealTree:prePrune ├── @types/methods@1.1.0
+381 silly idealTree:prePrune ├── @types/node@13.1.4
+381 silly idealTree:prePrune ├── @types/tough-cookie@2.3.6
+381 silly idealTree:prePrune ├── ajv@6.10.2
+381 silly idealTree:prePrune ├── asn1@0.2.4
+381 silly idealTree:prePrune ├── assert-plus@1.0.0
+381 silly idealTree:prePrune ├── asynckit@0.4.0
+381 silly idealTree:prePrune ├── aws-sign2@0.7.0
+381 silly idealTree:prePrune ├── aws4@1.9.0
+381 silly idealTree:prePrune ├── bcrypt-pbkdf@1.0.2
+381 silly idealTree:prePrune ├── buffer-from@1.1.1
+381 silly idealTree:prePrune ├── byte-length@1.0.2
+381 silly idealTree:prePrune ├── caseless@0.12.0
+381 silly idealTree:prePrune ├─┬ client-oauth2@4.2.5
+381 silly idealTree:prePrune │ └── popsicle@12.0.4
+381 silly idealTree:prePrune ├── combined-stream@1.0.8
+381 silly idealTree:prePrune ├── concat-stream@1.6.2
+381 silly idealTree:prePrune ├── core-util-is@1.0.2
+381 silly idealTree:prePrune ├── dashdash@1.14.1
+381 silly idealTree:prePrune ├── delayed-stream@1.0.0
+381 silly idealTree:prePrune ├── ecc-jsbn@0.1.2
+381 silly idealTree:prePrune ├── end-of-stream@1.4.4
+381 silly idealTree:prePrune ├── extend@3.0.2
+381 silly idealTree:prePrune ├── extsprintf@1.3.0
+381 silly idealTree:prePrune ├── fast-deep-equal@2.0.1
+381 silly idealTree:prePrune ├── fast-json-stable-stringify@2.1.0
+381 silly idealTree:prePrune ├── forever-agent@0.6.1
+381 silly idealTree:prePrune ├── form-data@2.3.3
+381 silly idealTree:prePrune ├── getpass@0.1.7
+381 silly idealTree:prePrune ├── har-schema@2.0.0
+381 silly idealTree:prePrune ├── har-validator@5.1.3
+381 silly idealTree:prePrune ├── http-signature@1.2.0
+381 silly idealTree:prePrune ├── inherits@2.0.4
+381 silly idealTree:prePrune ├── ip-regex@2.1.0
+381 silly idealTree:prePrune ├── is-typedarray@1.0.0
+381 silly idealTree:prePrune ├── isarray@1.0.0
+381 silly idealTree:prePrune ├── isstream@0.1.2
+381 silly idealTree:prePrune ├── jsbn@0.1.1
+381 silly idealTree:prePrune ├── json-schema-traverse@0.4.1
+381 silly idealTree:prePrune ├── json-schema@0.2.3
+381 silly idealTree:prePrune ├── json-stringify-safe@5.0.1
+381 silly idealTree:prePrune ├── jsprim@1.4.1
+381 silly idealTree:prePrune ├── make-error-cause@2.3.0
+381 silly idealTree:prePrune ├── make-error@1.3.5
+381 silly idealTree:prePrune ├── mime-db@1.42.0
+381 silly idealTree:prePrune ├── mime-types@2.1.25
+381 silly idealTree:prePrune ├── oauth-sign@0.9.0
+381 silly idealTree:prePrune ├── once@1.4.0
+381 silly idealTree:prePrune ├── performance-now@2.1.0
+381 silly idealTree:prePrune ├── popsicle-content-encoding@1.0.0
+381 silly idealTree:prePrune ├── popsicle-cookie-jar@1.0.0
+381 silly idealTree:prePrune ├── popsicle-redirects@1.1.0
+381 silly idealTree:prePrune ├── popsicle-transport-http@1.0.6
+381 silly idealTree:prePrune ├── popsicle-transport-xhr@1.0.2
+381 silly idealTree:prePrune ├── popsicle-user-agent@1.0.0
+381 silly idealTree:prePrune ├─┬ popsicle@10.0.0
+381 silly idealTree:prePrune │ ├── make-error-cause@1.2.2
+381 silly idealTree:prePrune │ └── tough-cookie@2.5.0
+381 silly idealTree:prePrune ├── process-nextick-args@2.0.1
+381 silly idealTree:prePrune ├── psl@1.7.0
+381 silly idealTree:prePrune ├── pump@3.0.0
+381 silly idealTree:prePrune ├── punycode@2.1.1
+381 silly idealTree:prePrune ├── qs@6.5.2
+381 silly idealTree:prePrune ├─┬ readable-stream@2.3.6
+381 silly idealTree:prePrune │ └── safe-buffer@5.1.2
+381 silly idealTree:prePrune ├─┬ request@2.88.0
+381 silly idealTree:prePrune │ ├── punycode@1.4.1
+381 silly idealTree:prePrune │ └── tough-cookie@2.4.3
+381 silly idealTree:prePrune ├── safe-buffer@5.2.0
+381 silly idealTree:prePrune ├── safer-buffer@2.1.2
+381 silly idealTree:prePrune ├── servie@4.3.2
+381 silly idealTree:prePrune ├── sshpk@1.16.1
+381 silly idealTree:prePrune ├─┬ string_decoder@1.1.1
+381 silly idealTree:prePrune │ └── safe-buffer@5.1.2
+381 silly idealTree:prePrune ├── throwback@4.1.0
+381 silly idealTree:prePrune ├── tough-cookie@3.0.1
+381 silly idealTree:prePrune ├── tunnel-agent@0.6.0
+381 silly idealTree:prePrune ├── tweetnacl@0.14.5
+381 silly idealTree:prePrune ├── typedarray@0.0.6
+381 silly idealTree:prePrune ├── uri-js@4.2.2
+381 silly idealTree:prePrune ├── util-deprecate@1.0.2
+381 silly idealTree:prePrune ├── uuid@3.3.3
+381 silly idealTree:prePrune ├── verror@1.10.0
+381 silly idealTree:prePrune └── wrappy@1.0.2
+382 silly loadIdealTree Finishing
+383 silly currentTree node-red-node-fitbit2@1.0.0
+383 silly currentTree ├── @servie/events@1.0.0
+383 silly currentTree ├── @types/concat-stream@1.6.0
+383 silly currentTree ├── @types/form-data@0.0.33
+383 silly currentTree ├── @types/methods@1.1.0
+383 silly currentTree ├── @types/node@13.1.4
+383 silly currentTree ├── @types/tough-cookie@2.3.6
+383 silly currentTree ├── ajv@6.10.2
+383 silly currentTree ├── asn1@0.2.4
+383 silly currentTree ├── assert-plus@1.0.0
+383 silly currentTree ├── asynckit@0.4.0
+383 silly currentTree ├── aws-sign2@0.7.0
+383 silly currentTree ├── aws4@1.9.0
+383 silly currentTree ├── bcrypt-pbkdf@1.0.2
+383 silly currentTree ├── buffer-from@1.1.1
+383 silly currentTree ├── byte-length@1.0.2
+383 silly currentTree ├── caseless@0.12.0
+383 silly currentTree ├─┬ client-oauth2@4.2.5
+383 silly currentTree │ └── popsicle@12.0.4
+383 silly currentTree ├── combined-stream@1.0.8
+383 silly currentTree ├── core-util-is@1.0.2
+383 silly currentTree ├── dashdash@1.14.1
+383 silly currentTree ├── delayed-stream@1.0.0
+383 silly currentTree ├── ecc-jsbn@0.1.2
+383 silly currentTree ├── end-of-stream@1.4.4
+383 silly currentTree ├── extend@3.0.2
+383 silly currentTree ├── extsprintf@1.3.0
+383 silly currentTree ├── fast-deep-equal@2.0.1
+383 silly currentTree ├── fast-json-stable-stringify@2.1.0
+383 silly currentTree ├── forever-agent@0.6.1
+383 silly currentTree ├── form-data@2.3.3
+383 silly currentTree ├── getpass@0.1.7
+383 silly currentTree ├── har-schema@2.0.0
+383 silly currentTree ├── har-validator@5.1.3
+383 silly currentTree ├── http-signature@1.2.0
+383 silly currentTree ├── inherits@2.0.4
+383 silly currentTree ├── ip-regex@2.1.0
+383 silly currentTree ├── is-typedarray@1.0.0
+383 silly currentTree ├── isstream@0.1.2
+383 silly currentTree ├── jsbn@0.1.1
+383 silly currentTree ├── json-schema-traverse@0.4.1
+383 silly currentTree ├── json-schema@0.2.3
+383 silly currentTree ├── json-stringify-safe@5.0.1
+383 silly currentTree ├── jsprim@1.4.1
+383 silly currentTree ├── make-error-cause@2.3.0
+383 silly currentTree ├── make-error@1.3.5
+383 silly currentTree ├── mime-db@1.42.0
+383 silly currentTree ├── mime-types@2.1.25
+383 silly currentTree ├── oauth-sign@0.9.0
+383 silly currentTree ├── once@1.4.0
+383 silly currentTree ├── performance-now@2.1.0
+383 silly currentTree ├── popsicle-content-encoding@1.0.0
+383 silly currentTree ├── popsicle-cookie-jar@1.0.0
+383 silly currentTree ├── popsicle-redirects@1.1.0
+383 silly currentTree ├── popsicle-transport-http@1.0.6
+383 silly currentTree ├── popsicle-transport-xhr@1.0.2
+383 silly currentTree ├── popsicle-user-agent@1.0.0
+383 silly currentTree ├─┬ popsicle@12.0.4
+383 silly currentTree │ ├── make-error-cause@1.2.2
+383 silly currentTree │ └── tough-cookie@2.5.0
+383 silly currentTree ├── psl@1.7.0
+383 silly currentTree ├── pump@3.0.0
+383 silly currentTree ├── punycode@2.1.1
+383 silly currentTree ├── qs@6.5.2
+383 silly currentTree ├─┬ request@2.88.0
+383 silly currentTree │ ├── punycode@1.4.1
+383 silly currentTree │ └── tough-cookie@2.4.3
+383 silly currentTree ├── safe-buffer@5.2.0
+383 silly currentTree ├── safer-buffer@2.1.2
+383 silly currentTree ├── servie@4.3.2
+383 silly currentTree ├── sshpk@1.16.1
+383 silly currentTree ├── throwback@4.1.0
+383 silly currentTree ├── tough-cookie@3.0.1
+383 silly currentTree ├── tunnel-agent@0.6.0
+383 silly currentTree ├── tweetnacl@0.14.5
+383 silly currentTree ├── typedarray@0.0.6
+383 silly currentTree ├── uri-js@4.2.2
+383 silly currentTree ├── uuid@3.3.3
+383 silly currentTree ├── verror@1.10.0
+383 silly currentTree └── wrappy@1.0.2
+384 silly idealTree node-red-node-fitbit2@1.0.0
+384 silly idealTree ├── @servie/events@1.0.0
+384 silly idealTree ├── @types/concat-stream@1.6.0
+384 silly idealTree ├── @types/form-data@0.0.33
+384 silly idealTree ├── @types/methods@1.1.0
+384 silly idealTree ├── @types/node@13.1.4
+384 silly idealTree ├── @types/tough-cookie@2.3.6
+384 silly idealTree ├── ajv@6.10.2
+384 silly idealTree ├── asn1@0.2.4
+384 silly idealTree ├── assert-plus@1.0.0
+384 silly idealTree ├── asynckit@0.4.0
+384 silly idealTree ├── aws-sign2@0.7.0
+384 silly idealTree ├── aws4@1.9.0
+384 silly idealTree ├── bcrypt-pbkdf@1.0.2
+384 silly idealTree ├── buffer-from@1.1.1
+384 silly idealTree ├── byte-length@1.0.2
+384 silly idealTree ├── caseless@0.12.0
+384 silly idealTree ├─┬ client-oauth2@4.2.5
+384 silly idealTree │ └── popsicle@12.0.4
+384 silly idealTree ├── combined-stream@1.0.8
+384 silly idealTree ├── concat-stream@1.6.2
+384 silly idealTree ├── core-util-is@1.0.2
+384 silly idealTree ├── dashdash@1.14.1
+384 silly idealTree ├── delayed-stream@1.0.0
+384 silly idealTree ├── ecc-jsbn@0.1.2
+384 silly idealTree ├── end-of-stream@1.4.4
+384 silly idealTree ├── extend@3.0.2
+384 silly idealTree ├── extsprintf@1.3.0
+384 silly idealTree ├── fast-deep-equal@2.0.1
+384 silly idealTree ├── fast-json-stable-stringify@2.1.0
+384 silly idealTree ├── forever-agent@0.6.1
+384 silly idealTree ├── form-data@2.3.3
+384 silly idealTree ├── getpass@0.1.7
+384 silly idealTree ├── har-schema@2.0.0
+384 silly idealTree ├── har-validator@5.1.3
+384 silly idealTree ├── http-signature@1.2.0
+384 silly idealTree ├── inherits@2.0.4
+384 silly idealTree ├── ip-regex@2.1.0
+384 silly idealTree ├── is-typedarray@1.0.0
+384 silly idealTree ├── isarray@1.0.0
+384 silly idealTree ├── isstream@0.1.2
+384 silly idealTree ├── jsbn@0.1.1
+384 silly idealTree ├── json-schema-traverse@0.4.1
+384 silly idealTree ├── json-schema@0.2.3
+384 silly idealTree ├── json-stringify-safe@5.0.1
+384 silly idealTree ├── jsprim@1.4.1
+384 silly idealTree ├── make-error-cause@2.3.0
+384 silly idealTree ├── make-error@1.3.5
+384 silly idealTree ├── mime-db@1.42.0
+384 silly idealTree ├── mime-types@2.1.25
+384 silly idealTree ├── oauth-sign@0.9.0
+384 silly idealTree ├── once@1.4.0
+384 silly idealTree ├── performance-now@2.1.0
+384 silly idealTree ├── popsicle-content-encoding@1.0.0
+384 silly idealTree ├── popsicle-cookie-jar@1.0.0
+384 silly idealTree ├── popsicle-redirects@1.1.0
+384 silly idealTree ├── popsicle-transport-http@1.0.6
+384 silly idealTree ├── popsicle-transport-xhr@1.0.2
+384 silly idealTree ├── popsicle-user-agent@1.0.0
+384 silly idealTree ├─┬ popsicle@10.0.0
+384 silly idealTree │ ├── make-error-cause@1.2.2
+384 silly idealTree │ └── tough-cookie@2.5.0
+384 silly idealTree ├── process-nextick-args@2.0.1
+384 silly idealTree ├── psl@1.7.0
+384 silly idealTree ├── pump@3.0.0
+384 silly idealTree ├── punycode@2.1.1
+384 silly idealTree ├── qs@6.5.2
+384 silly idealTree ├─┬ readable-stream@2.3.6
+384 silly idealTree │ └── safe-buffer@5.1.2
+384 silly idealTree ├─┬ request@2.88.0
+384 silly idealTree │ ├── punycode@1.4.1
+384 silly idealTree │ └── tough-cookie@2.4.3
+384 silly idealTree ├── safe-buffer@5.2.0
+384 silly idealTree ├── safer-buffer@2.1.2
+384 silly idealTree ├── servie@4.3.2
+384 silly idealTree ├── sshpk@1.16.1
+384 silly idealTree ├─┬ string_decoder@1.1.1
+384 silly idealTree │ └── safe-buffer@5.1.2
+384 silly idealTree ├── throwback@4.1.0
+384 silly idealTree ├── tough-cookie@3.0.1
+384 silly idealTree ├── tunnel-agent@0.6.0
+384 silly idealTree ├── tweetnacl@0.14.5
+384 silly idealTree ├── typedarray@0.0.6
+384 silly idealTree ├── uri-js@4.2.2
+384 silly idealTree ├── util-deprecate@1.0.2
+384 silly idealTree ├── uuid@3.3.3
+384 silly idealTree ├── verror@1.10.0
+384 silly idealTree └── wrappy@1.0.2
+385 silly generateActionsToTake Starting
+386 silly install generateActionsToTake
+387 silly generateActionsToTake Finishing
+388 silly diffTrees action count 9
+389 silly diffTrees add isarray@1.0.0
+390 silly diffTrees add process-nextick-args@2.0.1
+391 silly diffTrees add safe-buffer@5.1.2
+392 silly diffTrees add safe-buffer@5.1.2
+393 silly diffTrees add string_decoder@1.1.1
+394 silly diffTrees add util-deprecate@1.0.2
+395 silly diffTrees add readable-stream@2.3.6
+396 silly diffTrees add concat-stream@1.6.2
+397 silly diffTrees update popsicle@10.0.0
+398 silly decomposeActions action count 72
+399 silly decomposeActions fetch isarray@1.0.0
+400 silly decomposeActions extract isarray@1.0.0
+401 silly decomposeActions test isarray@1.0.0
+402 silly decomposeActions preinstall isarray@1.0.0
+403 silly decomposeActions build isarray@1.0.0
+404 silly decomposeActions install isarray@1.0.0
+405 silly decomposeActions postinstall isarray@1.0.0
+406 silly decomposeActions finalize isarray@1.0.0
+407 silly decomposeActions fetch process-nextick-args@2.0.1
+408 silly decomposeActions extract process-nextick-args@2.0.1
+409 silly decomposeActions test process-nextick-args@2.0.1
+410 silly decomposeActions preinstall process-nextick-args@2.0.1
+411 silly decomposeActions build process-nextick-args@2.0.1
+412 silly decomposeActions install process-nextick-args@2.0.1
+413 silly decomposeActions postinstall process-nextick-args@2.0.1
+414 silly decomposeActions finalize process-nextick-args@2.0.1
+415 silly decomposeActions fetch safe-buffer@5.1.2
+416 silly decomposeActions extract safe-buffer@5.1.2
+417 silly decomposeActions test safe-buffer@5.1.2
+418 silly decomposeActions preinstall safe-buffer@5.1.2
+419 silly decomposeActions build safe-buffer@5.1.2
+420 silly decomposeActions install safe-buffer@5.1.2
+421 silly decomposeActions postinstall safe-buffer@5.1.2
+422 silly decomposeActions finalize safe-buffer@5.1.2
+423 silly decomposeActions fetch safe-buffer@5.1.2
+424 silly decomposeActions extract safe-buffer@5.1.2
+425 silly decomposeActions test safe-buffer@5.1.2
+426 silly decomposeActions preinstall safe-buffer@5.1.2
+427 silly decomposeActions build safe-buffer@5.1.2
+428 silly decomposeActions install safe-buffer@5.1.2
+429 silly decomposeActions postinstall safe-buffer@5.1.2
+430 silly decomposeActions finalize safe-buffer@5.1.2
+431 silly decomposeActions fetch string_decoder@1.1.1
+432 silly decomposeActions extract string_decoder@1.1.1
+433 silly decomposeActions test string_decoder@1.1.1
+434 silly decomposeActions preinstall string_decoder@1.1.1
+435 silly decomposeActions build string_decoder@1.1.1
+436 silly decomposeActions install string_decoder@1.1.1
+437 silly decomposeActions postinstall string_decoder@1.1.1
+438 silly decomposeActions finalize string_decoder@1.1.1
+439 silly decomposeActions fetch util-deprecate@1.0.2
+440 silly decomposeActions extract util-deprecate@1.0.2
+441 silly decomposeActions test util-deprecate@1.0.2
+442 silly decomposeActions preinstall util-deprecate@1.0.2
+443 silly decomposeActions build util-deprecate@1.0.2
+444 silly decomposeActions install util-deprecate@1.0.2
+445 silly decomposeActions postinstall util-deprecate@1.0.2
+446 silly decomposeActions finalize util-deprecate@1.0.2
+447 silly decomposeActions fetch readable-stream@2.3.6
+448 silly decomposeActions extract readable-stream@2.3.6
+449 silly decomposeActions test readable-stream@2.3.6
+450 silly decomposeActions preinstall readable-stream@2.3.6
+451 silly decomposeActions build readable-stream@2.3.6
+452 silly decomposeActions install readable-stream@2.3.6
+453 silly decomposeActions postinstall readable-stream@2.3.6
+454 silly decomposeActions finalize readable-stream@2.3.6
+455 silly decomposeActions fetch concat-stream@1.6.2
+456 silly decomposeActions extract concat-stream@1.6.2
+457 silly decomposeActions test concat-stream@1.6.2
+458 silly decomposeActions preinstall concat-stream@1.6.2
+459 silly decomposeActions build concat-stream@1.6.2
+460 silly decomposeActions install concat-stream@1.6.2
+461 silly decomposeActions postinstall concat-stream@1.6.2
+462 silly decomposeActions finalize concat-stream@1.6.2
+463 silly decomposeActions fetch popsicle@10.0.0
+464 silly decomposeActions extract popsicle@10.0.0
+465 silly decomposeActions test popsicle@10.0.0
+466 silly decomposeActions preinstall popsicle@10.0.0
+467 silly decomposeActions build popsicle@10.0.0
+468 silly decomposeActions install popsicle@10.0.0
+469 silly decomposeActions postinstall popsicle@10.0.0
+470 silly decomposeActions finalize popsicle@10.0.0
+471 silly executeActions Starting
+472 silly install executeActions
+473 silly doSerial global-install 0
+474 silly doParallel fetch 9
+475 verbose lock using /home/thor/.npm/_locks/staging-ed1fcce5e232f4f2.lock for /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging
+476 silly doParallel extract 9
+477 silly extract isarray@1.0.0
+478 silly extract process-nextick-args@2.0.1
+479 silly extract safe-buffer@5.1.2
+480 silly extract safe-buffer@5.1.2
+481 silly extract string_decoder@1.1.1
+482 silly extract util-deprecate@1.0.2
+483 silly extract readable-stream@2.3.6
+484 silly extract concat-stream@1.6.2
+485 silly extract popsicle@10.0.0
+486 verbose unbuild node_modules/.staging/process-nextick-args-06a99b81
+487 verbose unbuild node_modules/.staging/isarray-b339dc35
+488 verbose unbuild node_modules/.staging/safe-buffer-a3307e96
+489 verbose unbuild node_modules/.staging/string_decoder-e5d3056d
+490 verbose unbuild node_modules/.staging/safe-buffer-15103c33
+491 verbose unbuild node_modules/.staging/util-deprecate-d430ce0f
+492 verbose unbuild node_modules/.staging/concat-stream-7348633b
+493 verbose unbuild node_modules/.staging/readable-stream-7f196521
+494 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/process-nextick-args-06a99b81 is being purged from base /home/thor/.node-red/node_modules/node-red-node-fitbit2
+495 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/process-nextick-args-06a99b81
+496 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/isarray-b339dc35 is being purged from base /home/thor/.node-red/node_modules/node-red-node-fitbit2
+497 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/isarray-b339dc35
+498 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-a3307e96 is being purged from base /home/thor/.node-red/node_modules/node-red-node-fitbit2
+499 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-a3307e96
+500 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/string_decoder-e5d3056d is being purged from base /home/thor/.node-red/node_modules/node-red-node-fitbit2
+501 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/string_decoder-e5d3056d
+502 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-15103c33 is being purged from base /home/thor/.node-red/node_modules/node-red-node-fitbit2
+503 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-15103c33
+504 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/util-deprecate-d430ce0f is being purged from base /home/thor/.node-red/node_modules/node-red-node-fitbit2
+505 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/util-deprecate-d430ce0f
+506 verbose tar unpack /home/thor/.npm/process-nextick-args/2.0.1/package.tgz
+507 verbose tar unpacking to /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/process-nextick-args-06a99b81
+508 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/process-nextick-args-06a99b81 is being purged
+509 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/process-nextick-args-06a99b81
+510 verbose tar unpack /home/thor/.npm/isarray/1.0.0/package.tgz
+511 verbose tar unpacking to /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/isarray-b339dc35
+512 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/isarray-b339dc35 is being purged
+513 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/isarray-b339dc35
+514 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/concat-stream-7348633b is being purged from base /home/thor/.node-red/node_modules/node-red-node-fitbit2
+515 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/concat-stream-7348633b
+516 verbose tar unpack /home/thor/.npm/safe-buffer/5.1.2/package.tgz
+517 verbose tar unpacking to /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-a3307e96
+518 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-a3307e96 is being purged
+519 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-a3307e96
+520 verbose tar unpack /home/thor/.npm/string_decoder/1.1.1/package.tgz
+521 verbose tar unpacking to /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/string_decoder-e5d3056d
+522 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/string_decoder-e5d3056d is being purged
+523 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/string_decoder-e5d3056d
+524 verbose tar unpack /home/thor/.npm/safe-buffer/5.1.2/package.tgz
+525 verbose tar unpacking to /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-15103c33
+526 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-15103c33 is being purged
+527 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-15103c33
+528 verbose unbuild node_modules/.staging/popsicle-9ccafd46
+529 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/readable-stream-7f196521 is being purged from base /home/thor/.node-red/node_modules/node-red-node-fitbit2
+530 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/readable-stream-7f196521
+531 verbose tar unpack /home/thor/.npm/util-deprecate/1.0.2/package.tgz
+532 verbose tar unpacking to /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/util-deprecate-d430ce0f
+533 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/util-deprecate-d430ce0f is being purged
+534 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/util-deprecate-d430ce0f
+535 silly gunzTarPerm modes [ '777', '666' ]
+536 silly gunzTarPerm modes [ '777', '666' ]
+537 verbose tar unpack /home/thor/.npm/concat-stream/1.6.2/package.tgz
+538 verbose tar unpacking to /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/concat-stream-7348633b
+539 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/concat-stream-7348633b is being purged
+540 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/concat-stream-7348633b
+541 silly gunzTarPerm modes [ '777', '666' ]
+542 silly gunzTarPerm modes [ '777', '666' ]
+543 silly gunzTarPerm modes [ '777', '666' ]
+544 verbose tar unpack /home/thor/.npm/readable-stream/2.3.6/package.tgz
+545 verbose tar unpacking to /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/readable-stream-7f196521
+546 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/readable-stream-7f196521 is being purged
+547 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/readable-stream-7f196521
+548 silly gunzTarPerm modes [ '777', '666' ]
+549 silly gunzTarPerm modes [ '777', '666' ]
+550 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/popsicle-9ccafd46 is being purged from base /home/thor/.node-red/node_modules/node-red-node-fitbit2
+551 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/popsicle-9ccafd46
+552 silly gunzTarPerm modes [ '777', '666' ]
+553 verbose tar unpack /home/thor/.npm/popsicle/10.0.0/package.tgz
+554 verbose tar unpacking to /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/popsicle-9ccafd46
+555 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/popsicle-9ccafd46 is being purged
+556 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/popsicle-9ccafd46
+557 silly gunzTarPerm modes [ '777', '666' ]
+558 silly gunzTarPerm extractEntry package.json
+559 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+560 silly gunzTarPerm extractEntry package.json
+561 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+562 silly gunzTarPerm extractEntry package.json
+563 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+564 silly gunzTarPerm extractEntry package.json
+565 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+566 silly gunzTarPerm extractEntry package.json
+567 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+568 silly gunzTarPerm extractEntry package.json
+569 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+570 silly gunzTarPerm extractEntry package.json
+571 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+572 silly gunzTarPerm extractEntry package.json
+573 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+574 silly gunzTarPerm extractEntry package.json
+575 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+576 silly gunzTarPerm extractEntry .npmignore
+577 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+578 silly gunzTarPerm extractEntry README.md
+579 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+580 silly gunzTarPerm extractEntry index.js
+581 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+582 silly gunzTarPerm extractEntry license.md
+583 silly gunzTarPerm modified mode [ 'license.md', 420, 438 ]
+584 silly gunzTarPerm extractEntry .travis.yml
+585 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+586 silly gunzTarPerm extractEntry LICENSE
+587 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+588 silly gunzTarPerm extractEntry index.d.ts
+589 silly gunzTarPerm modified mode [ 'index.d.ts', 420, 438 ]
+590 silly gunzTarPerm extractEntry index.js
+591 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+592 silly gunzTarPerm extractEntry index.d.ts
+593 silly gunzTarPerm modified mode [ 'index.d.ts', 420, 438 ]
+594 silly gunzTarPerm extractEntry index.js
+595 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+596 silly gunzTarPerm extractEntry index.js
+597 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+598 silly gunzTarPerm extractEntry LICENSE
+599 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+600 silly gunzTarPerm extractEntry README.md
+601 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+602 silly gunzTarPerm extractEntry LICENSE
+603 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+604 silly gunzTarPerm extractEntry .travis.yml
+605 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+606 silly gunzTarPerm extractEntry CONTRIBUTING.md
+607 silly gunzTarPerm modified mode [ 'CONTRIBUTING.md', 420, 438 ]
+608 silly gunzTarPerm extractEntry LICENSE
+609 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+610 silly gunzTarPerm extractEntry logo.svg
+611 silly gunzTarPerm modified mode [ 'logo.svg', 420, 438 ]
+612 silly gunzTarPerm extractEntry readme.md
+613 silly gunzTarPerm modified mode [ 'readme.md', 420, 438 ]
+614 silly gunzTarPerm extractEntry index.js
+615 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+616 silly gunzTarPerm extractEntry test.js
+617 silly gunzTarPerm modified mode [ 'test.js', 420, 438 ]
+618 silly gunzTarPerm extractEntry README.md
+619 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+620 silly gunzTarPerm extractEntry lib/string_decoder.js
+621 silly gunzTarPerm modified mode [ 'lib/string_decoder.js', 420, 438 ]
+622 silly gunzTarPerm extractEntry LICENSE
+623 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+624 silly gunzTarPerm extractEntry README.md
+625 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+626 silly gunzTarPerm extractEntry LICENSE
+627 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+628 silly gunzTarPerm extractEntry README.md
+629 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+630 silly gunzTarPerm extractEntry readme.md
+631 silly gunzTarPerm modified mode [ 'readme.md', 420, 438 ]
+632 silly gunzTarPerm extractEntry browser.js
+633 silly gunzTarPerm modified mode [ 'browser.js', 420, 438 ]
+634 silly gunzTarPerm extractEntry node.js
+635 silly gunzTarPerm modified mode [ 'node.js', 420, 438 ]
+636 silly gunzTarPerm extractEntry README.md
+637 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+638 silly gunzTarPerm extractEntry duplex-browser.js
+639 silly gunzTarPerm modified mode [ 'duplex-browser.js', 420, 438 ]
+640 silly gunzTarPerm extractEntry duplex.js
+641 silly gunzTarPerm modified mode [ 'duplex.js', 420, 438 ]
+642 silly gunzTarPerm extractEntry dist/base.d.ts
+643 silly gunzTarPerm modified mode [ 'dist/base.d.ts', 420, 438 ]
+644 silly gunzTarPerm extractEntry dist/base.js
+645 silly gunzTarPerm modified mode [ 'dist/base.js', 420, 438 ]
+646 silly gunzTarPerm extractEntry dist/base.js.map
+647 silly gunzTarPerm modified mode [ 'dist/base.js.map', 420, 438 ]
+648 silly gunzTarPerm extractEntry dist/browser.d.ts
+649 silly gunzTarPerm modified mode [ 'dist/browser.d.ts', 420, 438 ]
+650 silly gunzTarPerm extractEntry dist/browser.js
+651 silly gunzTarPerm modified mode [ 'dist/browser.js', 420, 438 ]
+652 silly gunzTarPerm extractEntry dist/browser.js.map
+653 silly gunzTarPerm modified mode [ 'dist/browser.js.map', 420, 438 ]
+654 silly gunzTarPerm extractEntry dist/browser/form-data.d.ts
+655 silly gunzTarPerm modified mode [ 'dist/browser/form-data.d.ts', 420, 438 ]
+656 silly gunzTarPerm extractEntry dist/browser/form-data.js
+657 silly gunzTarPerm modified mode [ 'dist/browser/form-data.js', 420, 438 ]
+658 silly gunzTarPerm extractEntry dist/browser/form-data.js.map
+659 silly gunzTarPerm modified mode [ 'dist/browser/form-data.js.map', 420, 438 ]
+660 silly gunzTarPerm extractEntry dist/browser/tough-cookie.d.ts
+661 silly gunzTarPerm modified mode [ 'dist/browser/tough-cookie.d.ts', 420, 438 ]
+662 silly gunzTarPerm extractEntry dist/browser/tough-cookie.js
+663 silly gunzTarPerm modified mode [ 'dist/browser/tough-cookie.js', 420, 438 ]
+664 silly gunzTarPerm extractEntry dist/browser/tough-cookie.js.map
+665 silly gunzTarPerm modified mode [ 'dist/browser/tough-cookie.js.map', 420, 438 ]
+666 silly gunzTarPerm extractEntry dist/common.d.ts
+667 silly gunzTarPerm modified mode [ 'dist/common.d.ts', 420, 438 ]
+668 silly gunzTarPerm extractEntry dist/common.js
+669 silly gunzTarPerm modified mode [ 'dist/common.js', 420, 438 ]
+670 silly gunzTarPerm extractEntry dist/common.js.map
+671 silly gunzTarPerm modified mode [ 'dist/common.js.map', 420, 438 ]
+672 silly gunzTarPerm extractEntry dist/error.d.ts
+673 silly gunzTarPerm modified mode [ 'dist/error.d.ts', 420, 438 ]
+674 silly gunzTarPerm extractEntry dist/error.js
+675 silly gunzTarPerm modified mode [ 'dist/error.js', 420, 438 ]
+676 silly gunzTarPerm extractEntry dist/error.js.map
+677 silly gunzTarPerm modified mode [ 'dist/error.js.map', 420, 438 ]
+678 silly gunzTarPerm extractEntry dist/form.d.ts
+679 silly gunzTarPerm modified mode [ 'dist/form.d.ts', 420, 438 ]
+680 silly gunzTarPerm extractEntry dist/form.js
+681 silly gunzTarPerm modified mode [ 'dist/form.js', 420, 438 ]
+682 silly gunzTarPerm extractEntry dist/form.js.map
+683 silly gunzTarPerm modified mode [ 'dist/form.js.map', 420, 438 ]
+684 silly gunzTarPerm extractEntry dist/index.d.ts
+685 silly gunzTarPerm modified mode [ 'dist/index.d.ts', 420, 438 ]
+686 silly gunzTarPerm extractEntry dist/index.js
+687 silly gunzTarPerm modified mode [ 'dist/index.js', 420, 438 ]
+688 silly gunzTarPerm extractEntry dist/index.js.map
+689 silly gunzTarPerm modified mode [ 'dist/index.js.map', 420, 438 ]
+690 silly gunzTarPerm extractEntry dist/jar.d.ts
+691 silly gunzTarPerm modified mode [ 'dist/jar.d.ts', 420, 438 ]
+692 silly gunzTarPerm extractEntry dist/jar.js
+693 silly gunzTarPerm modified mode [ 'dist/jar.js', 420, 438 ]
+694 silly gunzTarPerm extractEntry dist/jar.js.map
+695 silly gunzTarPerm modified mode [ 'dist/jar.js.map', 420, 438 ]
+696 silly gunzTarPerm extractEntry dist/plugins/browser.d.ts
+697 silly gunzTarPerm modified mode [ 'dist/plugins/browser.d.ts', 420, 438 ]
+698 silly gunzTarPerm extractEntry dist/plugins/browser.js
+699 silly gunzTarPerm modified mode [ 'dist/plugins/browser.js', 420, 438 ]
+700 silly gunzTarPerm extractEntry dist/plugins/browser.js.map
+701 silly gunzTarPerm modified mode [ 'dist/plugins/browser.js.map', 420, 438 ]
+702 silly gunzTarPerm extractEntry dist/plugins/common.d.ts
+703 silly gunzTarPerm modified mode [ 'dist/plugins/common.d.ts', 420, 438 ]
+704 silly gunzTarPerm extractEntry dist/plugins/common.js
+705 silly gunzTarPerm modified mode [ 'dist/plugins/common.js', 420, 438 ]
+706 silly gunzTarPerm extractEntry dist/plugins/common.js.map
+707 silly gunzTarPerm modified mode [ 'dist/plugins/common.js.map', 420, 438 ]
+708 silly gunzTarPerm extractEntry dist/plugins/index.d.ts
+709 silly gunzTarPerm modified mode [ 'dist/plugins/index.d.ts', 420, 438 ]
+710 silly gunzTarPerm extractEntry dist/plugins/index.js
+711 silly gunzTarPerm modified mode [ 'dist/plugins/index.js', 420, 438 ]
+712 silly gunzTarPerm extractEntry dist/plugins/index.js.map
+713 silly gunzTarPerm modified mode [ 'dist/plugins/index.js.map', 420, 438 ]
+714 silly gunzTarPerm extractEntry dist/plugins/is-host/browser.d.ts
+715 silly gunzTarPerm modified mode [ 'dist/plugins/is-host/browser.d.ts', 420, 438 ]
+716 silly gunzTarPerm extractEntry dist/plugins/is-host/browser.js
+717 silly gunzTarPerm modified mode [ 'dist/plugins/is-host/browser.js', 420, 438 ]
+718 silly gunzTarPerm extractEntry dist/plugins/is-host/browser.js.map
+719 silly gunzTarPerm modified mode [ 'dist/plugins/is-host/browser.js.map', 420, 438 ]
+720 silly gunzTarPerm extractEntry dist/plugins/is-host/index.d.ts
+721 silly gunzTarPerm modified mode [ 'dist/plugins/is-host/index.d.ts', 420, 438 ]
+722 silly gunzTarPerm extractEntry dist/plugins/is-host/index.js
+723 silly gunzTarPerm modified mode [ 'dist/plugins/is-host/index.js', 420, 438 ]
+724 silly gunzTarPerm extractEntry dist/plugins/is-host/index.js.map
+725 silly gunzTarPerm modified mode [ 'dist/plugins/is-host/index.js.map', 420, 438 ]
+726 silly gunzTarPerm extractEntry dist/request.d.ts
+727 silly gunzTarPerm modified mode [ 'dist/request.d.ts', 420, 438 ]
+728 silly gunzTarPerm extractEntry dist/request.js
+729 silly gunzTarPerm modified mode [ 'dist/request.js', 420, 438 ]
+730 silly gunzTarPerm extractEntry dist/request.js.map
+731 silly gunzTarPerm modified mode [ 'dist/request.js.map', 420, 438 ]
+732 silly gunzTarPerm extractEntry dist/response.d.ts
+733 silly gunzTarPerm modified mode [ 'dist/response.d.ts', 420, 438 ]
+734 silly gunzTarPerm extractEntry dist/response.js
+735 silly gunzTarPerm modified mode [ 'dist/response.js', 420, 438 ]
+736 silly gunzTarPerm extractEntry dist/response.js.map
+737 silly gunzTarPerm modified mode [ 'dist/response.js.map', 420, 438 ]
+738 silly gunzTarPerm extractEntry dist/support.d.ts
+739 silly gunzTarPerm modified mode [ 'dist/support.d.ts', 420, 438 ]
+740 silly gunzTarPerm extractEntry dist/support.js
+741 silly gunzTarPerm modified mode [ 'dist/support.js', 420, 438 ]
+742 silly gunzTarPerm extractEntry dist/support.js.map
+743 silly gunzTarPerm modified mode [ 'dist/support.js.map', 420, 438 ]
+744 silly gunzTarPerm extractEntry dist/test/index.d.ts
+745 silly gunzTarPerm modified mode [ 'dist/test/index.d.ts', 420, 438 ]
+746 silly gunzTarPerm extractEntry dist/test/index.js
+747 silly gunzTarPerm modified mode [ 'dist/test/index.js', 420, 438 ]
+748 silly gunzTarPerm extractEntry dist/test/index.js.map
+749 silly gunzTarPerm modified mode [ 'dist/test/index.js.map', 420, 438 ]
+750 silly gunzTarPerm extractEntry .travis.yml
+751 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+752 silly gunzTarPerm extractEntry Makefile
+753 silly gunzTarPerm modified mode [ 'Makefile', 420, 438 ]
+754 silly gunzTarPerm extractEntry History.md
+755 silly gunzTarPerm modified mode [ 'History.md', 420, 438 ]
+756 silly gunzTarPerm extractEntry GOVERNANCE.md
+757 silly gunzTarPerm modified mode [ 'GOVERNANCE.md', 420, 438 ]
+758 silly gunzTarPerm extractEntry LICENSE
+759 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+760 silly gunzTarPerm extractEntry component.json
+761 silly gunzTarPerm modified mode [ 'component.json', 420, 438 ]
+762 silly gunzTarPerm extractEntry passthrough.js
+763 silly gunzTarPerm modified mode [ 'passthrough.js', 420, 438 ]
+764 silly gunzTarPerm extractEntry readable-browser.js
+765 silly gunzTarPerm modified mode [ 'readable-browser.js', 420, 438 ]
+766 silly gunzTarPerm extractEntry readable.js
+767 silly gunzTarPerm modified mode [ 'readable.js', 420, 438 ]
+768 silly gunzTarPerm extractEntry README.md
+769 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+770 silly gunzTarPerm extractEntry transform.js
+771 silly gunzTarPerm modified mode [ 'transform.js', 420, 438 ]
+772 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/process-nextick-args-06a99b81/node_modules is being purged
+773 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/process-nextick-args-06a99b81/node_modules
+774 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/concat-stream-7348633b/node_modules is being purged
+775 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/concat-stream-7348633b/node_modules
+776 silly gunzTarPerm extractEntry writable-browser.js
+777 silly gunzTarPerm modified mode [ 'writable-browser.js', 420, 438 ]
+778 silly gunzTarPerm extractEntry writable.js
+779 silly gunzTarPerm modified mode [ 'writable.js', 420, 438 ]
+780 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/string_decoder-e5d3056d/node_modules is being purged
+781 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/string_decoder-e5d3056d/node_modules
+782 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-a3307e96/node_modules is being purged
+783 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-a3307e96/node_modules
+784 silly gunzTarPerm extractEntry doc/wg-meetings/2015-01-30.md
+785 silly gunzTarPerm modified mode [ 'doc/wg-meetings/2015-01-30.md', 420, 438 ]
+786 silly gunzTarPerm extractEntry lib/_stream_duplex.js
+787 silly gunzTarPerm modified mode [ 'lib/_stream_duplex.js', 420, 438 ]
+788 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-15103c33/node_modules is being purged
+789 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-15103c33/node_modules
+790 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/util-deprecate-d430ce0f/node_modules is being purged
+791 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/util-deprecate-d430ce0f/node_modules
+792 silly gunzTarPerm extractEntry lib/_stream_passthrough.js
+793 silly gunzTarPerm modified mode [ 'lib/_stream_passthrough.js', 420, 438 ]
+794 silly gunzTarPerm extractEntry lib/_stream_readable.js
+795 silly gunzTarPerm modified mode [ 'lib/_stream_readable.js', 420, 438 ]
+796 silly gunzTarPerm extractEntry lib/_stream_transform.js
+797 silly gunzTarPerm modified mode [ 'lib/_stream_transform.js', 420, 438 ]
+798 silly gunzTarPerm extractEntry lib/_stream_writable.js
+799 silly gunzTarPerm modified mode [ 'lib/_stream_writable.js', 420, 438 ]
+800 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/isarray-b339dc35/node_modules is being purged
+801 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/isarray-b339dc35/node_modules
+802 silly gunzTarPerm extractEntry lib/internal/streams/BufferList.js
+803 silly gunzTarPerm modified mode [ 'lib/internal/streams/BufferList.js', 420, 438 ]
+804 silly gunzTarPerm extractEntry lib/internal/streams/destroy.js
+805 silly gunzTarPerm modified mode [ 'lib/internal/streams/destroy.js', 420, 438 ]
+806 silly gunzTarPerm extractEntry lib/internal/streams/stream-browser.js
+807 silly gunzTarPerm modified mode [ 'lib/internal/streams/stream-browser.js', 420, 438 ]
+808 silly gunzTarPerm extractEntry lib/internal/streams/stream.js
+809 silly gunzTarPerm modified mode [ 'lib/internal/streams/stream.js', 420, 438 ]
+810 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/readable-stream-7f196521/node_modules is being purged
+811 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/readable-stream-7f196521/node_modules
+812 silly gentlyRm /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/popsicle-9ccafd46/node_modules is being purged
+813 verbose gentlyRm don't care about contents; nuking /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/popsicle-9ccafd46/node_modules
+814 silly doParallel preinstall 9
+815 silly preinstall isarray@1.0.0 /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/isarray-b339dc35
+816 info lifecycle isarray@1.0.0~preinstall: isarray@1.0.0
+817 silly preinstall process-nextick-args@2.0.1 /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/process-nextick-args-06a99b81
+818 info lifecycle process-nextick-args@2.0.1~preinstall: process-nextick-args@2.0.1
+819 silly preinstall safe-buffer@5.1.2 /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-a3307e96
+820 info lifecycle safe-buffer@5.1.2~preinstall: safe-buffer@5.1.2
+821 silly preinstall safe-buffer@5.1.2 /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/safe-buffer-15103c33
+822 info lifecycle safe-buffer@5.1.2~preinstall: safe-buffer@5.1.2
+823 silly preinstall string_decoder@1.1.1 /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/string_decoder-e5d3056d
+824 info lifecycle string_decoder@1.1.1~preinstall: string_decoder@1.1.1
+825 silly preinstall util-deprecate@1.0.2 /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/util-deprecate-d430ce0f
+826 info lifecycle util-deprecate@1.0.2~preinstall: util-deprecate@1.0.2
+827 silly preinstall readable-stream@2.3.6 /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/readable-stream-7f196521
+828 info lifecycle readable-stream@2.3.6~preinstall: readable-stream@2.3.6
+829 silly preinstall concat-stream@1.6.2 /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/concat-stream-7348633b
+830 info lifecycle concat-stream@1.6.2~preinstall: concat-stream@1.6.2
+831 silly preinstall popsicle@10.0.0 /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging/popsicle-9ccafd46
+832 info lifecycle popsicle@10.0.0~preinstall: popsicle@10.0.0
+833 silly lifecycle isarray@1.0.0~preinstall: no script for preinstall, continuing
+834 silly lifecycle process-nextick-args@2.0.1~preinstall: no script for preinstall, continuing
+835 silly lifecycle safe-buffer@5.1.2~preinstall: no script for preinstall, continuing
+836 silly lifecycle safe-buffer@5.1.2~preinstall: no script for preinstall, continuing
+837 silly lifecycle string_decoder@1.1.1~preinstall: no script for preinstall, continuing
+838 silly lifecycle util-deprecate@1.0.2~preinstall: no script for preinstall, continuing
+839 silly lifecycle readable-stream@2.3.6~preinstall: no script for preinstall, continuing
+840 silly lifecycle concat-stream@1.6.2~preinstall: no script for preinstall, continuing
+841 silly lifecycle popsicle@10.0.0~preinstall: no script for preinstall, continuing
+842 silly doReverseSerial remove 0
+843 silly doSerial move 0
+844 silly doSerial finalize 9
+845 silly finalize /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/isarray
+846 silly finalize /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/process-nextick-args
+847 silly finalize /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/readable-stream/node_modules/safe-buffer
+848 silly finalize /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/string_decoder/node_modules/safe-buffer
+849 silly finalize /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/string_decoder
+850 silly finalize /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/util-deprecate
+851 silly finalize /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/readable-stream
+852 verbose unlock done using /home/thor/.npm/_locks/staging-ed1fcce5e232f4f2.lock for /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.staging
+853 silly rollbackFailedOptional Starting
+854 silly rollbackFailedOptional Finishing
+855 silly runTopLevelLifecycles Starting
+856 silly runTopLevelLifecycles Finishing
+857 silly install printInstalled
+858 warn node-red-node-fitbit2@1.0.0 No description
+859 warn node-red-node-fitbit2@1.0.0 No repository field.
+860 verbose stack Error: EACCES: permission denied, rename '/home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/readable-stream' -> '/home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.readable-stream.DELETE'
+860 verbose stack     at moveAway (/usr/share/npm/lib/install/action/finalize.js:38:5)
+860 verbose stack     at destStatted (/usr/share/npm/lib/install/action/finalize.js:27:7)
+860 verbose stack     at FSReqWrap.oncomplete (fs.js:153:5)
+860 verbose stack
+860 verbose stack Error: EACCES: permission denied, rename '/home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/readable-stream' -> '/home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.readable-stream.DELETE'
+861 verbose cwd /home/thor/.node-red/node_modules/node-red-node-fitbit2
+862 error Linux 4.4.0-18362-Microsoft
+863 error argv "/usr/bin/node" "/usr/bin/npm" "i"
+864 error node v8.10.0
+865 error npm  v3.5.2
+866 error path /home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/readable-stream
+867 error code EACCES
+868 error errno -13
+869 error syscall rename
+870 error Error: EACCES: permission denied, rename '/home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/readable-stream' -> '/home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.readable-stream.DELETE'
+870 error     at moveAway (/usr/share/npm/lib/install/action/finalize.js:38:5)
+870 error     at destStatted (/usr/share/npm/lib/install/action/finalize.js:27:7)
+870 error     at FSReqWrap.oncomplete (fs.js:153:5)
+870 error
+870 error Error: EACCES: permission denied, rename '/home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/readable-stream' -> '/home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.readable-stream.DELETE'
+870 error  { Error: EACCES: permission denied, rename '/home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/readable-stream' -> '/home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.readable-stream.DELETE'
+870 error     at moveAway (/usr/share/npm/lib/install/action/finalize.js:38:5)
+870 error     at destStatted (/usr/share/npm/lib/install/action/finalize.js:27:7)
+870 error     at FSReqWrap.oncomplete (fs.js:153:5)
+870 error
+870 error Error: EACCES: permission denied, rename '/home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/readable-stream' -> '/home/thor/.node-red/node_modules/node-red-node-fitbit2/node_modules/.readable-stream.DELETE' parent: 'node-red-node-fitbit2' }
+871 error Please try running this command again as root/Administrator.
+872 verbose exit [ -13, true ]

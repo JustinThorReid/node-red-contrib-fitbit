@@ -6,5 +6,5 @@ module.exports = function (RED) {
             node.send(msg);
         });
     }
-    RED.nodes.registerType("lower-case", fitbitQueryNode);
+    RED.nodes.registerType("fitbit-query", fitbitQueryNode);
 }
