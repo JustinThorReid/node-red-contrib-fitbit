@@ -1,15 +1,13 @@
 const ClientOAuth2 = require('client-oauth2');
+const request = require('request');
 
 module.exports = function (RED) {
     function saveNewToken(credentialsID, credentials, tokenData) {
-        console.log("Save creds", credentialsID, credentials);
-
         credentials.access_token = tokenData.access_token;
         credentials.expires_in = tokenData.expires_in;
         credentials.refresh_token = tokenData.refresh_token;
         credentials.user_id = tokenData.user_id;
         RED.nodes.addCredentials(credentialsID, credentials);
-        console.log("Save creds done", credentials);
     }
 
     function getFitbitOauth(credentials) {
@@ -23,30 +21,43 @@ module.exports = function (RED) {
     }
 
     function _makeRequest(method, url, token) {
+        console.log("Making request", method, url, token);
         return new Promise((resolve, reject) => {
             request(token.sign({
                 method: method,
                 url: url
-            }), (_err, _response, body) => {
-                resolve(body);
+            }), (err, _response, body) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(body);
+                }
             });
         });
     }
 
-    function makeRequest(method, url, credentials) {
-        const oauth = getFitbitOauth(credentials.clientID, credentials.clientSecret);
+    function makeRequest(method, url, credentials, credentialsID) {
+        const oauth = getFitbitOauth(credentials);
         const token = oauth.createToken(credentials);
 
+        let requestPromise;
         if (token.expired) {
-            return token.refresh().then(newToken => {
-                saveNewToken(credentials, newToken);
+            console.log("Token expired", token, credentials);
+            requestPromise = token.refresh().then(newToken => {
+                saveNewToken(credentialsID, credentials, newToken);
                 return newToken;
+            }).catch(err => {
+                console.error("Error refreshing fitbit token", err);
             }).then(newToken => {
                 return _makeRequest(method, url, newToken);
             })
         } else {
-            return _makeRequest(method, url, token);
+            requestPromise = _makeRequest(method, url, token);
         }
+
+        return requestPromise.catch(err => {
+            console.error("Error requesting from fitbit", err);
+        });
     }
 
     return {

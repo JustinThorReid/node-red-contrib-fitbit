@@ -5,19 +5,20 @@ module.exports = function (RED) {
         RED.nodes.createNode(this, config);
         var node = this;
 
-        this.credentialsNode = RED.nodes.getNode(config.fitbit);
-        if (!this.credentialsNode) {
+        if (!RED.nodes.getNode(config.fitbit)) {
             this.warn(RED._("fitbit.warn.missing-credentials"));
             return;
         }
 
-        console.log(config);
-        console.log(this.credentialsNode);
-        console.log(RED.nodes.getCredentials(this.credentialsNode.id));
         node.on('input', function (msg) {
-            console.log(config);
-            const credentials = RED.nodes.getCredentials(config.fitbit);
-            node.send(msg);
+            const credentialsNode = RED.nodes.getNode(config.fitbit);
+            const credentials = RED.nodes.getNode(config.fitbit).credentials;
+            console.log(credentialsNode);
+
+            oauth.makeRequest("GET", "https://api.fitbit.com/1/user/-/profile.json", credentials, credentialsNode.id).then(data => {
+                msg.payload = data;
+                node.send(msg);
+            })
         });
     }
     RED.nodes.registerType("fitbit-query", fitbitQueryNode);
