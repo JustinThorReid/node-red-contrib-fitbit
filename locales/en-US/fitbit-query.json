@@ -14,6 +14,9 @@
             "secret": "Secret",
             "authenticate": "Authenticate with Fitbit",
             "fitbitid": "Fitbit ID"
+        },
+        "warn": {
+            "missing-credentials": "Missing Fitbit OAuth2 crendtials"
         }
     }
 }

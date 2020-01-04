@@ -1,61 +1,20 @@
-const ClientOAuth2 = require('client-oauth2');
 const request = require('request');
 
 module.exports = function (RED) {
-    function saveNewToken(credentialsID, credentials, tokenData) {
-        credentials.username = tokenData.user_id;
-        credentials.tokenData = tokenData;
-        RED.nodes.addCredentials(credentialsID, credentials);
+    const oauth = require('./oauth-helper')(RED);
+
+    function FitbitCredentials(config) {
+        RED.nodes.createNode(this, config);
     }
 
-    function getFitbitOauth(credentials) {
-        return new ClientOAuth2({
-            clientId: credentials.clientID,
-            clientSecret: credentials.clientSecret,
-            accessTokenUri: 'https://api.fitbit.com/oauth2/token',
-            authorizationUri: 'https://www.fitbit.com/oauth2/authorize',
-            scopes: ['activity', 'heartrate', 'location', 'nutrition', 'profile', 'settings', 'sleep', 'social', 'weight']
-        });
-    }
-
-    function _makeRequest(method, url, token) {
-        return new Promise((resolve, reject) => {
-            request(token.sign({
-                method: method,
-                url: url
-            }), (_err, _response, body) => {
-                resolve(body);
-            });
-        });
-    }
-
-    function makeRequest(method, url, credentials) {
-        const oauth = getFitbitOauth(credentials.clientID, credentials.clientSecret);
-        const token = oauth.createToken(credentials.tokenData);
-
-        if (token.expired) {
-            return token.refresh().then(newToken => {
-                saveNewToken(credentials, newToken);
-                return newToken;
-            }).then(newToken => {
-                return _makeRequest(method, url, newToken);
-            })
-        } else {
-            return _makeRequest(method, url, token);
-        }
-    }
-
-    function FitbitNode(n) {
-        RED.nodes.createNode(this, n);
-        this.username = n.username;
-    }
-
-    RED.nodes.registerType("fitbit-credentials", FitbitNode, {
+    RED.nodes.registerType("fitbit-credentials", FitbitCredentials, {
         credentials: {
-            username: { type: "text" },
+            access_token: { type: "password" },
+            expires_in: { type: "password" },
+            refresh_token: { type: "password" },
+            user_id: { type: "text" },
             clientID: { type: "password" },
-            clientSecret: { type: "password" },
-            tokenData: { type: "password" }
+            clientSecret: { type: "password" }
         }
     });
 
@@ -71,7 +30,7 @@ module.exports = function (RED) {
         };
         RED.nodes.addCredentials(req.params.id, credentials);
 
-        const authUri = getFitbitOauth(credentials).code.getUri({
+        const authUri = oauth.getFitbitOauth(credentials).code.getUri({
             state: req.params.id,
             redirectUri: req.protocol + '://' + req.get('host') + '/fitbit-credentials/auth/callback',
         });
@@ -88,11 +47,11 @@ module.exports = function (RED) {
             return;
         }
 
-        getFitbitOauth(credentials).code.getToken(req.originalUrl, {
+        oauth.getFitbitOauth(credentials).code.getToken(req.originalUrl, {
             state: req.params.id,
             redirectUri: req.protocol + '://' + req.get('host') + '/fitbit-credentials/auth/callback',
         }).then((token) => {
-            saveNewToken(credentialsID, credentials, token.data);
+            oauth.saveNewToken(credentialsID, credentials, token.data);
             res.send(RED._("fitbit.auth-flow.authorized"));
         });
     });
