@@ -12,7 +12,8 @@
     "nodes": {
       "fitbit-credentials": "fitbit-credentials.js",
       "fitbit-query-fat": "fitbit-query-fat.js",
-      "fitbit-query-body": "fitbit-query-body.js"
+      "fitbit-query-body": "fitbit-query-body.js",
+      "fitbit-query-activity-summary": "fitbit-query-activity-summary.js"
     }
   },
   "dependencies": {

@@ -1,0 +1,46 @@
+<script type="text/javascript">
+    RED.nodes.registerType('fitbit-query-activity-summary', {
+        category: 'social',
+        color: '#a6bbcf',
+        defaults: {
+            fitbit: { type: "fitbit-credentials", required: true },
+            name: { value: "" },
+
+
+            startDate: { value: "" },
+            startDateType: { value: "str" },
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "file.png",
+        label: function () {
+            return this.name || "fitbit-query-activity-summary";
+        },
+        oneditprepare: function () {
+            $("#node-input-startDate").typedInput({
+                types: ['str', 'date', 'msg', 'flow', 'global'],
+                typeField: $("#node-input-startDateType")
+            });
+        },
+    });
+</script>
+
+<script type="text/x-red" data-template-name="fitbit-query-activity-summary">
+    <div class="form-row">
+        <label for="node-input-fitbit"><i class="fa fa-user"></i> <span data-i18n="fitbit.label.fitbit"></span></label>
+        <input type="text" id="node-input-fitbit">
+    </div>
+    <div class="form-row">
+        <label for="node-input-startDate"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.startdate"></span></label>
+        <input type="text" id="node-input-startDate" style="width:275px;">
+        <input type="hidden" id="node-input-startDateType">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="fitbit-query-activity-summary">
+    <p>Makes request to the fitbit <a href="https://dev.fitbit.com/build/reference/web-api/activity/#get-daily-activity-summary">daily-activity-summary</a> endpoint.</p>
+</script>
