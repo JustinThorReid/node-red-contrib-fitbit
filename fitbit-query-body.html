@@ -1,0 +1,83 @@
+<script type="text/javascript">
+    RED.nodes.registerType('fitbit-query-body', {
+        category: 'social',
+        color: '#a6bbcf',
+        defaults: {
+            fitbit: { type: "fitbit-credentials", required: true },
+            name: { value: "" },
+
+            resource: { value: "" },
+            resourceType: { value: "str" },
+
+            startDate: { value: "" },
+            startDateType: { value: "str" },
+
+            endDate: { value: "", required: false },
+            endDateType: { value: "str" },
+
+            period: { value: "", required: false },
+            periodType: { value: "str" },
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "file.png",
+        label: function () {
+            return this.name || "fitbit-query-body";
+        },
+        oneditprepare: function () {
+            $("#node-input-resource").typedInput({
+                types: ['str', 'date', 'msg', 'flow', 'global'],
+                typeField: $("#node-input-resourceType")
+            });
+            $("#node-input-startDate").typedInput({
+                types: ['str', 'date', 'msg', 'flow', 'global'],
+                typeField: $("#node-input-startDateType")
+            });
+            $("#node-input-endDate").typedInput({
+                types: ['str', 'date', 'msg', 'flow', 'global'],
+                typeField: $("#node-input-endDateType")
+            });
+            $("#node-input-period").typedInput({
+                types: ['str', 'msg', 'flow', 'global'],
+                typeField: $("#node-input-periodType")
+            });
+        },
+    });
+</script>
+
+<script type="text/x-red" data-template-name="fitbit-query-body">
+    <div class="form-row">
+        <label for="node-input-fitbit"><i class="fa fa-user"></i> <span data-i18n="fitbit.label.fitbit"></span></label>
+        <input type="text" id="node-input-fitbit">
+    </div>
+    <div class="form-row">
+        <label for="node-input-resource"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.resource"></span></label>
+        <input type="text" id="node-input-resource" style="width:275px;">
+        <input type="hidden" id="node-input-resourceType">
+    </div>
+    <div class="form-row">
+        <label for="node-input-startDate"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.startdate"></span></label>
+        <input type="text" id="node-input-startDate" style="width:275px;">
+        <input type="hidden" id="node-input-startDateType">
+    </div>
+    <div class="form-row">
+        <label for="node-input-endDate"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.enddate"></span></label>
+        <input type="text" id="node-input-endDate" style="width:275px;">
+        <input type="hidden" id="node-input-endDateType">
+    </div>
+    <div class="form-row">
+        <label for="node-input-period"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.period"></span></label>
+        <input type="text" id="node-input-period" style="width:275px;">
+        <input type="hidden" id="node-input-periodType">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="fitbit-query-body">
+    <p>Makes request to the fitbit <a href="https://dev.fitbit.com/build/reference/web-api/body/#body-time-series">body-time-series</a> endpoint.</p>
+    <p>Resource options are "bmi", "fat", or "weight"</p>
+    <p>Period options are 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max</p>
+</script>

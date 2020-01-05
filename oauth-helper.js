@@ -3,11 +3,13 @@ const request = require('request');
 
 module.exports = function (RED) {
     function saveNewToken(credentialsID, credentials, tokenData) {
-        credentials.access_token = tokenData.access_token;
-        credentials.expires_in = tokenData.expires_in;
-        credentials.refresh_token = tokenData.refresh_token;
-        credentials.user_id = tokenData.user_id;
+        console.log("saving token:", credentials, tokenData);
+        credentials.access_token = tokenData.data.access_token;
+        credentials.expires = tokenData.expires;
+        credentials.refresh_token = tokenData.data.refresh_token;
+        credentials.user_id = tokenData.data.user_id;
         RED.nodes.addCredentials(credentialsID, credentials);
+        console.log("creds:", credentials);
     }
 
     function getFitbitOauth(credentials) {
@@ -38,16 +40,21 @@ module.exports = function (RED) {
 
     function makeRequest(method, url, credentials, credentialsID) {
         const oauth = getFitbitOauth(credentials);
-        const token = oauth.createToken(credentials);
+        const token = oauth.createToken({
+            access_token: credentials.access_token,
+            expires_in: (new Date(credentials.expires).getTime() - new Date().getTime()) / 1000,
+            token_type: 'Bearer',
+            refresh_token: credentials.refresh_token,
+            user_id: credentials.user_id,
+            clientID: credentials.clientID,
+            clientSecret: credentials.clientSecret
+        });
 
         let requestPromise;
-        if (token.expired) {
-            console.log("Token expired", token, credentials);
+        if (token.expired()) {
             requestPromise = token.refresh().then(newToken => {
                 saveNewToken(credentialsID, credentials, newToken);
                 return newToken;
-            }).catch(err => {
-                console.error("Error refreshing fitbit token", err);
             }).then(newToken => {
                 return _makeRequest(method, url, newToken);
             })

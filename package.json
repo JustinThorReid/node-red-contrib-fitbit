@@ -11,11 +11,13 @@
   "node-red": {
     "nodes": {
       "fitbit-credentials": "fitbit-credentials.js",
-      "fitbit-query": "fitbit-query.js"
+      "fitbit-query-fat": "fitbit-query-fat.js",
+      "fitbit-query-body": "fitbit-query-body.js"
     }
   },
   "dependencies": {
     "client-oauth2": "^4.2.5",
+    "moment": "^2.24.0",
     "request": "^2.88.0"
   }
 }
