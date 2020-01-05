@@ -1,0 +1,18 @@
+{
+    "fitbit": {
+        "resources": {
+            "body-fat-log": "Body fat log",
+            "default": "Resource"
+        },
+        "label": {
+            "fitbit": "Fitbit",
+            "name": "Name",
+            "startdate": "Start Date",
+            "enddate": "End Date",
+            "period": "Period"
+        },
+        "warn": {
+            "missing-credentials": "Missing Fitbit OAuth2 credentials"
+        }
+    }
+}
