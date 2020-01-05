@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('fitbit-query-activity-summary', {
+    RED.nodes.registerType('fitbit-activity-summary-in', {
         category: 'social',
         color: '#a6bbcf',
         defaults: {
@@ -12,9 +12,9 @@
         },
         inputs: 1,
         outputs: 1,
-        icon: "file.png",
+        icon: "fitbit-128.png",
         label: function () {
-            return this.name || "fitbit-query-activity-summary";
+            return this.name || this.type.replace(/\-/g, ' ');
         },
         oneditprepare: function () {
             $("#node-input-startDate").typedInput({
@@ -25,7 +25,7 @@
     });
 </script>
 
-<script type="text/x-red" data-template-name="fitbit-query-activity-summary">
+<script type="text/x-red" data-template-name="fitbit-activity-summary-in">
     <div class="form-row">
         <label for="node-input-fitbit"><i class="fa fa-user"></i> <span data-i18n="fitbit.label.fitbit"></span></label>
         <input type="text" id="node-input-fitbit">
@@ -41,6 +41,6 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="fitbit-query-activity-summary">
+<script type="text/x-red" data-help-name="fitbit-activity-summary-in">
     <p>Makes request to the fitbit <a href="https://dev.fitbit.com/build/reference/web-api/activity/#get-daily-activity-summary">daily-activity-summary</a> endpoint.</p>
 </script>

@@ -3,7 +3,7 @@ const moment = require('moment');
 module.exports = function (RED) {
     const nodeFactory = require('./node-factory')(RED);
 
-    nodeFactory("fitbit-query-activity-summary", (data, msg) => {
+    nodeFactory("fitbit-activity-summary-in", (data, msg) => {
         const startDate = data(msg, "startDate");
 
         if (!startDate) {
