@@ -3,13 +3,11 @@ const request = require('request');
 
 module.exports = function (RED) {
     function saveNewToken(credentialsID, credentials, tokenData) {
-        console.log("saving token:", credentials, tokenData);
         credentials.access_token = tokenData.data.access_token;
         credentials.expires = tokenData.expires;
         credentials.refresh_token = tokenData.data.refresh_token;
         credentials.user_id = tokenData.data.user_id;
         RED.nodes.addCredentials(credentialsID, credentials);
-        console.log("creds:", credentials);
     }
 
     function getFitbitOauth(credentials) {
@@ -23,7 +21,6 @@ module.exports = function (RED) {
     }
 
     function _makeRequest(method, url, token) {
-        console.log("Making request", method, url, token);
         return new Promise((resolve, reject) => {
             request(token.sign({
                 method: method,
