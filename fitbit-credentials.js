@@ -9,9 +9,6 @@ module.exports = function (RED) {
 
     RED.nodes.registerType("fitbit-credentials", FitbitCredentials, {
         credentials: {
-            access_token: { type: "password" },
-            expires: { type: "password" },
-            refresh_token: { type: "password" },
             user_id: { type: "text" },
             clientID: { type: "password" },
             clientSecret: { type: "password" }
@@ -51,7 +48,9 @@ module.exports = function (RED) {
             state: req.params.id,
             redirectUri: req.protocol + '://' + req.get('host') + '/fitbit-credentials/auth/callback',
         }).then((token) => {
-            oauth.saveNewToken(credentialsID, credentials, token);
+            credentials.user_id = token.data.user_id;
+            RED.nodes.addCredentials(credentialsID, credentials);
+            oauth.saveNewToken(credentialsID, token);
             res.send(RED._("fitbit.auth-flow.authorized"));
         });
     });

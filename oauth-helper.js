@@ -1,13 +1,36 @@
 const ClientOAuth2 = require('client-oauth2');
 const request = require('request');
+const fs = require('fs');
+const FILE_PATH = 'fitbit-oauth-tokens.json';
+
+let tokens = {};
+function loadTokens() {
+    if (!fs.existsSync(FILE_PATH)) {
+        fs.writeFileSync(FILE_PATH, '{}');
+    }
+
+    const data = fs.readFileSync(FILE_PATH, function (err, data) {
+        if (err) {
+            console.error(err);
+            return;
+        }
+    });
+
+    tokens = JSON.parse(data) || {};
+}
+loadTokens();
 
 module.exports = function (RED) {
-    function saveNewToken(credentialsID, credentials, tokenData) {
-        credentials.access_token = tokenData.data.access_token;
-        credentials.expires = tokenData.expires;
-        credentials.refresh_token = tokenData.data.refresh_token;
-        credentials.user_id = tokenData.data.user_id;
-        RED.nodes.addCredentials(credentialsID, credentials);
+    function saveNewToken(credentialsID, tokenData) {
+        tokens[credentialsID] = {
+            access_token: tokenData.data.access_token,
+            expires: tokenData.expires,
+            refresh_token: tokenData.data.refresh_token
+        }
+
+        fs.writeFile(FILE_PATH, JSON.stringify(tokens), function (err) {
+            if (err) console.error(err);
+        });
     }
 
     function getFitbitOauth(credentials) {
@@ -36,25 +59,24 @@ module.exports = function (RED) {
     }
 
     function makeRequest(method, url, credentials, credentialsID) {
+        console.log(tokens);
+        if (!tokens[credentialsID]) return Promise.resolve();
+
         const oauth = getFitbitOauth(credentials);
         const token = oauth.createToken({
-            access_token: credentials.access_token,
-            expires_in: (new Date(credentials.expires).getTime() - new Date().getTime()) / 1000,
+            access_token: tokens[credentialsID].access_token,
+            expires_in: (new Date(tokens[credentialsID].expires).getTime() - new Date().getTime()) / 1000,
             token_type: 'Bearer',
-            refresh_token: credentials.refresh_token,
+            refresh_token: tokens[credentialsID].refresh_token,
             user_id: credentials.user_id,
             clientID: credentials.clientID,
             clientSecret: credentials.clientSecret
         });
-        console.log("token", token);
-        console.log("creds", credentials);
 
         let requestPromise;
         if (true || token.expired()) {
             requestPromise = token.refresh().then(newToken => {
-                console.log("newToken", newToken);
-                console.log("creds", credentials);
-                saveNewToken(credentialsID, credentials, newToken);
+                saveNewToken(credentialsID, newToken);
                 return newToken;
             }).then(newToken => {
                 return _makeRequest(method, url, newToken);
