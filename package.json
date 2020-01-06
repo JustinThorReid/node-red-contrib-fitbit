@@ -11,9 +11,6 @@
   "node-red": {
     "nodes": {
       "fitbit-credentials": "fitbit-credentials.js",
-      "fitbit-fat": "fitbit-fat-in.js",
-      "fitbit-body": "fitbit-body-in.js",
-      "fitbit-activity-summary": "fitbit-activity-summary-in.js",
       "fitbit-in": "fitbit-in.js"
     }
   },

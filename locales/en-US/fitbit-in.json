@@ -4,7 +4,8 @@
             "body-fat-log": "Body Fat Log",
             "activity-summary-in": "Daily Activity Summary",
             "body-timeseries": "Body Time Series",
-            "default": "Resource"
+            "default": "Resource",
+            "sleep-log": "Sleep Logs"
         },
         "label": {
             "fitbit": "Fitbit",

@@ -5,6 +5,7 @@
             typeField: $('#node-input-' + key + 'Type')
         });
     }
+    const resourcePromise = $.getJSON('/fitbit-in/resources');
 
     RED.nodes.registerType('fitbit-in', {
         category: 'social',
@@ -26,7 +27,7 @@
         outputs: 1,
         icon: "fitbit-128.png",
         label: function () {
-            return this.name || this.type.replace(/\-/g, ' ');
+            return this.name || this.resource.replace(/\-/g, ' ') || 'fitbit in';
         },
         oneditprepare: function () {
             let that = this;
@@ -36,6 +37,7 @@
                 Object.keys(resourceData).forEach(function (key) {
                     $('#node-input-resource').append('<option value="' + key + '">' + resourceData[key].display + '</option>')
                 })
+                $('#node-input-resource').val(that.resource);
 
                 function updateInputs(key) {
                     $('#inputs > *').hide();
@@ -102,7 +104,7 @@
 </script>
 
 <script type="text/x-red" data-help-name="fitbit-in">
-    <p>Makes request to the fitbit <a href="https://dev.fitbit.com/build/reference/web-api/body/#body-fat">body-fat</a> endpoint.</p>
-    <p>Period options are 1d, 7d, 1w, 1m</p>
-    <p>Note: The range should not be longer than 31 days.</p>
+    <p>Makes GET request to the <a href="https://dev.fitbit.com/build/reference/web-api/">Fitbit API</a>.</p>
+    <p>Please refer to the API documentation for specific input details, dates should be convertable by <a href="https://momentjs.com/docs/">MomentJS</a>.
+        Some parameters, such as Period, have a limited set of inputs that vary between endpoints</p>
 </script>

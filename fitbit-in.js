@@ -73,7 +73,7 @@ module.exports = function (RED) {
                 }
             }
         },
-        "activity-summary-in": {
+        "activity-summary": {
             display: RED._("fitbit.resources.activity-summary-in"),
             inputs: ["startDate"],
             func: (data) => {
@@ -82,6 +82,17 @@ module.exports = function (RED) {
                 }
                 const formattedStartDate = moment(data.startDate).format('YYYY-MM-DD');
                 return "https://api.fitbit.com/1/user/-/activities/date/" + formattedStartDate + ".json";
+            }
+        },
+        "sleep-log": {
+            display: RED._("fitbit.resources.sleep-log"),
+            inputs: ["startDate"],
+            func: (data) => {
+                if (!data.startDate) {
+                    throw "Start date is required.";
+                }
+                const formattedStartDate = moment(data.startDate).format('YYYY-MM-DD');
+                return "https://api.fitbit.com/1/user/-/sleep/date/" + formattedStartDate + ".json";
             }
         }
     };
