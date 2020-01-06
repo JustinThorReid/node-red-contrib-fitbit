@@ -20,6 +20,7 @@
             endDateType: {},
             period: {},
             periodType: {},
+            bodySeriesPath: {}
         },
         inputs: 1,
         outputs: 1,
@@ -29,11 +30,15 @@
         },
         oneditprepare: function () {
             let that = this;
+            $('#inputs > *').hide();
 
             $.getJSON('/fitbit-in/resources').then(function (resourceData) {
+                Object.keys(resourceData).forEach(function (key) {
+                    $('#node-input-resource').append('<option value="' + key + '">' + resourceData[key].display + '</option>')
+                })
+
                 function updateInputs(key) {
                     $('#inputs > *').hide();
-                    console.log("key", resourceData, key);
 
                     if (!resourceData || !resourceData[key]) return;
 
@@ -62,10 +67,18 @@
         <label for="node-input-resource"><i class="fa fa-tag"></i> <span data-i18n="fitbit.label.resource"></span></label>
         <select id="node-input-resource">
             <option value="" selected disabled hidden data-i18n="fitbit.resources.default"></option>
-            <option value="body-fat-log" selected disabled hidden data-i18n="fitbit.resources.body-fat-log"></option>
         </select>
     </div>
     <div id="inputs">
+        <div class="form-row">
+            <label for="node-input-bodySeriesPath"><i class="fa fa-tag"></i> <span data-i18n="fitbit.label.bodySeriesPath"></span></label>
+            <select id="node-input-bodySeriesPath">
+                <option value="" selected disabled hidden data-i18n="fitbit.label.bodySeriesPathDefault"></option>
+                <option value="bmi" data-i18n="fitbit.label.bodySeriesPathBmi"></option>
+                <option value="fat" data-i18n="fitbit.label.bodySeriesPathFat"></option>
+                <option value="weight" data-i18n="fitbit.label.bodySeriesPathWeight"></option>
+            </select>
+        </div>
         <div class="form-row">
             <label for="node-input-startDate"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.startdate"></span></label>
             <input type="text" id="node-input-startDate" style="width:275px;">

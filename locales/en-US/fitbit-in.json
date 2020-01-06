@@ -1,7 +1,9 @@
 {
     "fitbit": {
         "resources": {
-            "body-fat-log": "Body fat log",
+            "body-fat-log": "Body Fat Log",
+            "activity-summary-in": "Daily Activity Summary",
+            "body-timeseries": "Body Time Series",
             "default": "Resource"
         },
         "label": {
@@ -9,7 +11,13 @@
             "name": "Name",
             "startdate": "Start Date",
             "enddate": "End Date",
-            "period": "Period"
+            "period": "Period",
+            "resource": "Endpoint",
+            "bodySeriesPath": "Resource",
+            "bodySeriesPathDefault": "Choose Path",
+            "bodySeriesPathBmi": "BMI",
+            "bodySeriesPathFat": "Fat",
+            "bodySeriesPathWeight": "Weight"
         },
         "warn": {
             "missing-credentials": "Missing Fitbit OAuth2 credentials"

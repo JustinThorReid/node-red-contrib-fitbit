@@ -4,6 +4,8 @@ function typedDataFactory(RED, config, node) {
     return function getTypedInput(msg, key) {
         const type = key + 'Type';
 
+        if (!config[type]) return config[key];
+
         switch (config[type]) {
             case 'str':
                 return config[key];
@@ -31,9 +33,8 @@ module.exports = function (RED) {
             inputs: ["startDate", "endDate", "period"],
             func: (data) => {
                 if (!data.startDate) {
-                    throw "Startdate is required.";
+                    throw "Start date is required.";
                 }
-
                 const formattedStartDate = moment(data.startDate).format('YYYY-MM-DD');
 
                 if (data.startDate && !data.endDate && !data.period) {
@@ -48,6 +49,41 @@ module.exports = function (RED) {
                 } else {
                     throw "Bad input combination";
                 }
+            }
+        },
+        "body-timeseries": {
+            display: RED._("fitbit.resources.body-timeseries"),
+            inputs: ["bodySeriesPath", "startDate", "endDate", "period"],
+            func: (data) => {
+                console.log(data);
+
+                if (!data.startDate) {
+                    throw "Start date is required.";
+                }
+                if (!data.bodySeriesPath) {
+                    throw "Resource is required";
+                }
+                const formattedStartDate = moment(data.startDate).format('YYYY-MM-DD');
+
+                if (data.startDate && !data.endDate && data.period) {
+                    return "https://api.fitbit.com/1/user/-/body/" + data.bodySeriesPath + "/date/" + formattedStartDate + "/" + data.period + ".json";
+                } else if (data.startDate && data.endDate && !data.period) {
+                    const formattedEndDate = moment(data.endDate).format('YYYY-MM-DD');
+                    return "https://api.fitbit.com/1/user/-/body/" + data.bodySeriesPath + "/date/" + formattedStartDate + "/" + formattedEndDate + ".json";
+                } else {
+                    throw "Bad input combination";
+                }
+            }
+        },
+        "activity-summary-in": {
+            display: RED._("fitbit.resources.activity-summary-in"),
+            inputs: ["startDate"],
+            func: (data) => {
+                if (!data.startDate) {
+                    throw "Start date is required.";
+                }
+                const formattedStartDate = moment(data.startDate).format('YYYY-MM-DD');
+                return "https://api.fitbit.com/1/user/-/activities/date/" + formattedStartDate + ".json";
             }
         }
     };
@@ -72,11 +108,12 @@ module.exports = function (RED) {
         node.on('input', function (msg) {
             let url;
             try {
-                const data = resource.inputs.map((input) => {
-                    return getTypedData(msg, input.key);
+                let data = {};
+                resource.inputs.forEach((input) => {
+                    data[input] = getTypedData(msg, input);
                 })
 
-                url = resourceFunc(data);
+                url = resource.func(data);
             } catch (err) {
                 node.error(err, msg);
                 return;

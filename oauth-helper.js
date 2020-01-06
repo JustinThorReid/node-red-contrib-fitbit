@@ -46,10 +46,14 @@ module.exports = function (RED) {
             clientID: credentials.clientID,
             clientSecret: credentials.clientSecret
         });
+        console.log("token", token);
+        console.log("creds", credentials);
 
         let requestPromise;
-        if (token.expired()) {
+        if (true || token.expired()) {
             requestPromise = token.refresh().then(newToken => {
+                console.log("newToken", newToken);
+                console.log("creds", credentials);
                 saveNewToken(credentialsID, credentials, newToken);
                 return newToken;
             }).then(newToken => {
