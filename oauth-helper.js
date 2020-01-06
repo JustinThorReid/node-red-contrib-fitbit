@@ -59,7 +59,6 @@ module.exports = function (RED) {
     }
 
     function makeRequest(method, url, credentials, credentialsID) {
-        console.log(tokens);
         if (!tokens[credentialsID]) return Promise.resolve();
 
         const oauth = getFitbitOauth(credentials);

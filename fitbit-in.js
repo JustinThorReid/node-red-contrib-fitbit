@@ -55,8 +55,6 @@ module.exports = function (RED) {
             display: RED._("fitbit.resources.body-timeseries"),
             inputs: ["bodySeriesPath", "startDate", "endDate", "period"],
             func: (data) => {
-                console.log(data);
-
                 if (!data.startDate) {
                     throw "Start date is required.";
                 }
