@@ -142,10 +142,10 @@ module.exports = function (RED) {
             })
         });
     }
-    RED.nodes.registerType("fitbit-in", fitbitInNode);
+    RED.nodes.registerType("fitbit", fitbitInNode);
 
 
-    RED.httpAdmin.get('/fitbit-in/resources', function (req, res) {
+    RED.httpAdmin.get('/fitbit/resources', function (req, res) {
         res.send(RESOURCE_TYPES);
     });
 }

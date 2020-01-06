@@ -7,7 +7,7 @@
     }
     const resourcePromise = $.getJSON('/fitbit-in/resources');
 
-    RED.nodes.registerType('fitbit-in', {
+    RED.nodes.registerType('fitbit', {
         category: 'social',
         color: '#a6bbcf',
         defaults: {
@@ -27,7 +27,7 @@
         outputs: 1,
         icon: "fitbit-128.png",
         label: function () {
-            return this.name || this.resource.replace(/\-/g, ' ') || 'fitbit in';
+            return this.name || this.resource.replace(/\-/g, ' ') || 'fitbit';
         },
         oneditprepare: function () {
             let that = this;
@@ -60,7 +60,7 @@
     });
 </script>
 
-<script type="text/x-red" data-template-name="fitbit-in">
+<script type="text/x-red" data-template-name="fitbit">
     <div class="form-row">
         <label for="node-input-fitbit"><i class="fa fa-user"></i> <span data-i18n="fitbit.label.fitbit"></span></label>
         <input type="text" id="node-input-fitbit">
@@ -103,7 +103,7 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="fitbit-in">
+<script type="text/x-red" data-help-name="fitbit">
     <p>Makes GET request to the <a href="https://dev.fitbit.com/build/reference/web-api/">Fitbit API</a>.</p>
     <p>Please refer to the API documentation for specific input details, dates should be convertable by <a href="https://momentjs.com/docs/">MomentJS</a>.
         Some parameters, such as Period, have a limited set of inputs that vary between endpoints</p>

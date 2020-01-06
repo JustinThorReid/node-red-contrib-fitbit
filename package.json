@@ -1,5 +1,5 @@
 {
-  "name": "node-red-node-fitbit2",
+  "name": "node-red-contrib-fitbit",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "node-red": {
     "nodes": {
       "fitbit-credentials": "fitbit-credentials.js",
-      "fitbit-in": "fitbit-in.js"
+      "fitbit": "fitbit.js"
     }
   },
   "dependencies": {
