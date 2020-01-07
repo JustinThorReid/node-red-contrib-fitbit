@@ -5,7 +5,7 @@
             typeField: $('#node-input-' + key + 'Type')
         });
     }
-    const resourcePromise = $.getJSON('/fitbit-in/resources');
+    const resourcePromise = $.getJSON('/fitbit/resources');
 
     RED.nodes.registerType('fitbit', {
         category: 'social',

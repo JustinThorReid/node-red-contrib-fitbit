@@ -7,6 +7,11 @@ module.exports = function (RED) {
         RED.nodes.createNode(this, config);
     }
 
+    function getProtocol(req) {
+        if (req.get('host') === 'localhost') return req.protocol;
+        return 'https';
+    }
+
     RED.nodes.registerType("fitbit-credentials", FitbitCredentials, {
         credentials: {
             user_id: { type: "text" },
@@ -29,7 +34,7 @@ module.exports = function (RED) {
 
         const authUri = oauth.getFitbitOauth(credentials).code.getUri({
             state: req.params.id,
-            redirectUri: req.protocol + '://' + req.get('host') + '/fitbit-credentials/auth/callback',
+            redirectUri: getProtocol(req) + '://' + req.get('host') + '/fitbit-credentials/auth/callback',
         });
 
         res.redirect(authUri);
@@ -46,7 +51,7 @@ module.exports = function (RED) {
 
         oauth.getFitbitOauth(credentials).code.getToken(req.originalUrl, {
             state: req.params.id,
-            redirectUri: req.protocol + '://' + req.get('host') + '/fitbit-credentials/auth/callback',
+            redirectUri: getProtocol(req) + '://' + req.get('host') + '/fitbit-credentials/auth/callback',
         }).then((token) => {
             credentials.user_id = token.data.user_id;
             RED.nodes.addCredentials(credentialsID, credentials);
