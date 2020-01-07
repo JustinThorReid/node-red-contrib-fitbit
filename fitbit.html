@@ -5,7 +5,6 @@
             typeField: $('#node-input-' + key + 'Type')
         });
     }
-    const resourcePromise = $.getJSON('/fitbit/resources');
 
     RED.nodes.registerType('fitbit', {
         category: 'social',
@@ -33,7 +32,7 @@
             let that = this;
             $('#inputs > *').hide();
 
-            $.getJSON('/fitbit-in/resources').then(function (resourceData) {
+            $.getJSON('/fitbit/resources').then(function (resourceData) {
                 Object.keys(resourceData).forEach(function (key) {
                     $('#node-input-resource').append('<option value="' + key + '">' + resourceData[key].display + '</option>')
                 })

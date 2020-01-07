@@ -2,6 +2,7 @@
     "fitbit": {
         "resources": {
             "body-fat-log": "Body Fat Log",
+            "body-weight-log": "Body Weight Log",
             "activity-summary-in": "Daily Activity Summary",
             "body-timeseries": "Body Time Series",
             "default": "Resource",

@@ -51,6 +51,29 @@ module.exports = function (RED) {
                 }
             }
         },
+        "body-weight-log": {
+            display: RED._("fitbit.resources.body-weight-log"),
+            inputs: ["startDate", "endDate", "period"],
+            func: (data) => {
+                if (!data.startDate) {
+                    throw "Start date is required.";
+                }
+                const formattedStartDate = moment(data.startDate).format('YYYY-MM-DD');
+
+                if (data.startDate && !data.endDate && !data.period) {
+                    return "https://api.fitbit.com/1/user/-/body/log/weight/date/" + formattedStartDate + ".json";
+                } else if (data.startDate && data.endDate && !data.period) {
+                    const formattedEndDate = moment(data.endDate).format('YYYY-MM-DD');
+                    return "https://api.fitbit.com/1/user/-/body/log/weight/date/" + formattedStartDate + "/" + formattedEndDate + ".json";
+                } else if (data.startDate && !data.endDate && data.period) {
+                    if (!['1d', '7d', '1w', '1m'].includes(data.period)) throw "Invalid period";
+
+                    return "https://api.fitbit.com/1/user/-/body/log/weight/date/" + formattedStartDate + "/" + data.period + ".json";
+                } else {
+                    throw "Bad input combination";
+                }
+            }
+        },
         "body-timeseries": {
             display: RED._("fitbit.resources.body-timeseries"),
             inputs: ["bodySeriesPath", "startDate", "endDate", "period"],
