@@ -9,6 +9,15 @@ Run the following command in the root directory of your Node-RED install
 
         npm install node-red-node-fitbit
 
+Configure
+---------
+When creating a configuration for Fitbit you will need to create an app on dev.fitbit.com with the following settings:
+- Callback Url: https://<YOUR-NODE-RED-SERVER>/fitbit-credentials/auth/callback
+  - Please note the URL **must be HTTPS** (self-signed SSL works).
+- OAuth 2.0 Application Type: Server
+      
+Other settings are up to you.
+
 Usage
 -----
 
