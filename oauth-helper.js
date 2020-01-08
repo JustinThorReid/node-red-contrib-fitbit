@@ -3,6 +3,7 @@ const request = require('request');
 const fs = require('fs');
 const FILE_PATH = 'fitbit-oauth-tokens.json';
 
+let refreshPromise;
 let tokens = {};
 function loadTokens() {
     if (!fs.existsSync(FILE_PATH)) {
@@ -73,11 +74,17 @@ module.exports = function (RED) {
         });
 
         let requestPromise;
-        if (true || token.expired()) {
-            requestPromise = token.refresh().then(newToken => {
-                saveNewToken(credentialsID, newToken);
-                return newToken;
-            }).then(newToken => {
+        if (token.expired()) {
+            // Only refresh once
+            if (!refreshPromise) {
+                refreshPromise = token.refresh().then(newToken => {
+                    saveNewToken(credentialsID, newToken);
+                    refreshPromise = undefined;
+                    return newToken;
+                })
+            }
+
+            requestPromise = refreshPromise.then(newToken => {
                 return _makeRequest(method, url, newToken);
             })
         } else {
