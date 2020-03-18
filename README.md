@@ -29,6 +29,7 @@ Fitbit query node supports several endpoints
 - Get Body Fat Logs
 - Get Body Time Series
 - Get Daily Activity Summary
+- Get Activity Time Series
 - Get Sleep Logs
 
 Depending on the endpoint selected the node will allow different inputs to filter the fitbit query.

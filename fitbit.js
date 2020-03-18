@@ -96,6 +96,28 @@ module.exports = function (RED) {
                 }
             }
         },
+        "activity-timeseries": {
+            display: RED._("fitbit.resources.activity-timeseries"),
+            inputs: ["activitiesSeriesPath", "startDate", "endDate", "period"],
+            func: (data) => {
+                if (!data.activitiesSeriesPath) {
+                    throw "Resource is required";
+                }
+                if (!data.endDate) {
+                    throw "End date is required.";
+                }
+                const formattedEndDate = moment(data.endDate).format('YYYY-MM-DD');
+
+                if (!data.startDate && data.endDate && data.period) {
+                    return "https://api.fitbit.com/1/user/-/activities/" + data.activitiesSeriesPath + "/date/" + formattedEndDate + "/" + data.period + ".json";
+                } else if (data.startDate && data.endDate && !data.period) {
+                    const formattedStartDate = moment(data.startDate).format('YYYY-MM-DD');
+                    return "https://api.fitbit.com/1/user/-/activities/" + data.activitiesSeriesPath + "/date/" + formattedStartDate + "/" + formattedEndDate + ".json";
+                } else {
+                    throw "Bad input combination";
+                }
+            }
+        },
         "activity-summary": {
             display: RED._("fitbit.resources.activity-summary-in"),
             inputs: ["startDate"],

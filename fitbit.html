@@ -20,7 +20,8 @@
             endDateType: {},
             period: {},
             periodType: {},
-            bodySeriesPath: {}
+            bodySeriesPath: {},
+            activitiesSeriesPath: {}
         },
         inputs: 1,
         outputs: 1,
@@ -78,6 +79,17 @@
                 <option value="bmi" data-i18n="fitbit.label.bodySeriesPathBmi"></option>
                 <option value="fat" data-i18n="fitbit.label.bodySeriesPathFat"></option>
                 <option value="weight" data-i18n="fitbit.label.bodySeriesPathWeight"></option>
+            </select>
+        </div>
+        <div class="form-row">
+            <label for="node-input-activitiesSeriesPath"><i class="fa fa-tag"></i> <span data-i18n="fitbit.label.activitiesSeriesPath"></span></label>
+            <select id="node-input-activitiesSeriesPath">
+                <option value="" selected disabled hidden data-i18n="fitbit.label.activitiesSeriesPathDefault"></option>
+                <option value="steps" data-i18n="fitbit.label.activitiesSeriesPathSteps"></option>
+                <option value="distance" data-i18n="fitbit.label.activitiesSeriesPathDistance"></option>
+                <option value="calories" data-i18n="fitbit.label.activitiesSeriesPathCalories"></option>
+                <option value="caloriesBMR" data-i18n="fitbit.label.activitiesSeriesPathCaloriesBMR"></option>
+                <option value="activityCalories" data-i18n="fitbit.label.activitiesSeriesPathCaloriesActive"></option>
             </select>
         </div>
         <div class="form-row">
