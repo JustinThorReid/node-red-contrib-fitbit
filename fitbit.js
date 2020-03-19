@@ -129,6 +129,13 @@ module.exports = function (RED) {
                 return "https://api.fitbit.com/1/user/-/activities/date/" + formattedStartDate + ".json";
             }
         },
+        "devices": {
+            display: RED._("fitbit.resources.devices-in"),
+            inputs: [],
+            func: (data) => {
+                return "https://api.fitbit.com/1/user/-/devices.json";
+            }
+        },
         "sleep-log": {
             display: RED._("fitbit.resources.sleep-log"),
             inputs: ["startDate"],
