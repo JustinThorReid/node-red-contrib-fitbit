@@ -5,6 +5,7 @@
             "body-weight-log": "Body Weight Log",
             "activity-summary-in": "Daily Activity Summary",
             "body-timeseries": "Body Time Series",
+            "activity-timeseries": "Activity Time Series",
             "default": "Resource",
             "sleep-log": "Sleep Logs"
         },
@@ -19,7 +20,14 @@
             "bodySeriesPathDefault": "Choose Path",
             "bodySeriesPathBmi": "BMI",
             "bodySeriesPathFat": "Fat",
-            "bodySeriesPathWeight": "Weight"
+            "bodySeriesPathWeight": "Weight",
+            "activitiesSeriesPath": "Resource",
+            "activitiesSeriesPathDefault": "Resource",
+            "activitiesSeriesPathSteps": "Steps",
+            "activitiesSeriesPathDistance": "Distance",
+            "activitiesSeriesPathCalories": "Calories",
+            "activitiesSeriesPathCaloriesBMR": "Calories BMR",
+            "activitiesSeriesPathCaloriesActive": "Active Calories"
         },
         "warn": {
             "missing-credentials": "Missing Fitbit OAuth2 credentials"
