@@ -1,5 +1,22 @@
 const moment = require('moment');
 
+function parseFitbitData(body) {
+    if (!body)
+        throw "Fitbit API returned an empty response";
+
+    let result_json;
+    try {
+        result_json = JSON.parse(body);
+    } catch (e) {
+        throw "Json parse error: " + e.message;
+    }
+
+    if (result_json.hasOwnProperty("errors"))
+        throw "Fitbit API error: " + result_json.errors.map(e=>e.message).join(", ");
+
+    return result_json;
+}
+
 function typedDataFactory(RED, config, node) {
     return function getTypedInput(msg, key) {
         const type = key + 'Type';
@@ -154,6 +171,12 @@ module.exports = function (RED) {
         const node = this;
         const getTypedData = typedDataFactory(RED, config, node);
 
+        const errorReport = function (errorText, msg) {
+            node.error(errorText, msg);
+            node.status({text: errorText , fill: "red"});
+            node.send(null);
+        };
+
         if (!RED.nodes.getNode(config.fitbit)) {
             this.warn(RED._("fitbit.warn.missing-credentials"));
             return;
@@ -168,20 +191,21 @@ module.exports = function (RED) {
 
         node.on('input', function (msg) {
             let url;
+            node.status("");
             try {
                 let data = {};
                 resource.inputs.forEach((input) => {
                     data[input] = getTypedData(msg, input);
-                })
+                });
 
                 url = resource.func(data);
             } catch (err) {
-                node.error(err, msg);
+                errorReport(err, msg);
                 return;
             }
 
             if (!url) {
-                node.error("Could not build api url", msg);
+                errorReport("Could not build api url", msg);
                 return;
             }
 
@@ -189,7 +213,13 @@ module.exports = function (RED) {
             const credentials = RED.nodes.getNode(config.fitbit).credentials;
 
             oauth.makeRequest("GET", url, credentials, credentialsNode.id).then(data => {
-                msg.payload = data;
+                try {
+                    msg.payload = parseFitbitData(data);
+                } catch (err) {
+                    errorReport(err, msg);
+                    return;
+                }
+
                 node.send(msg);
             })
         });
