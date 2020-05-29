@@ -8,8 +8,12 @@ module.exports = function (RED) {
     }
 
     function getProtocol(req) {
-        if (req.get('host') === 'localhost') return req.protocol;
+        if (req.get('host') === 'localhost:1880') return 'http';
         return 'https';
+    }
+
+    function getRedirectURL(req) {
+        return getProtocol(req) + '://' + req.get('host') + '/fitbit-credentials/auth/callback';
     }
 
     RED.nodes.registerType("fitbit-credentials", FitbitCredentials, {
@@ -19,6 +23,10 @@ module.exports = function (RED) {
             clientSecret: { type: "password" }
         }
     });
+
+    RED.httpAdmin.get('/fitbit-credentials/redirectURL', function (req, res) {
+        res.send(getRedirectURL(req));
+    })
 
     RED.httpAdmin.get('/fitbit-credentials/:id/auth', function (req, res) {
         if (!req.query.client_id || !req.query.client_secret) {
@@ -34,7 +42,7 @@ module.exports = function (RED) {
 
         const authUri = oauth.getFitbitOauth(credentials).code.getUri({
             state: req.params.id,
-            redirectUri: getProtocol(req) + '://' + req.get('host') + '/fitbit-credentials/auth/callback',
+            redirectUri: getRedirectURL(req),
         });
 
         res.redirect(authUri);
@@ -51,7 +59,7 @@ module.exports = function (RED) {
 
         oauth.getFitbitOauth(credentials).code.getToken(req.originalUrl, {
             state: req.params.id,
-            redirectUri: getProtocol(req) + '://' + req.get('host') + '/fitbit-credentials/auth/callback',
+            redirectUri: getRedirectURL(req),
         }).then((token) => {
             credentials.user_id = token.data.user_id;
             RED.nodes.addCredentials(credentialsID, credentials);
