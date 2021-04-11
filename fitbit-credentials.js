@@ -1,5 +1,3 @@
-const request = require('request');
-
 module.exports = function (RED) {
     const oauth = require('./oauth-helper')(RED);
 
