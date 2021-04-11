@@ -49,11 +49,11 @@ module.exports = function (RED) {
             request(token.sign({
                 method: method,
                 url: url
-            }), (err, _response, body) => {
+            }), (err, response, _body) => {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve(body);
+                    resolve(response);
                 }
             });
         });

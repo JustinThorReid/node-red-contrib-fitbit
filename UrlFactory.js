@@ -134,6 +134,59 @@ class UrlFactory {
       throw new Error("Bad input combination");
     }
   }
+
+  static logActivty(data) {
+    checkData(data);
+
+    if (!data.activityId && !data.activityName) {
+      throw new Error("activityId or activityName is required.");
+    }
+
+    if (data.activityId && data.activityName) {
+      throw new Error("Either activityId or activityName should be specified.");
+    }
+
+    if (!data.manualCalories) {
+      throw new Error("manualCalories is required");
+    }
+
+    if (!data.startDate) {
+      throw new Error("Start date is required.");
+    }
+
+    if (!data.startTime) {
+      throw new Error("Start date is required.");
+    }
+
+    if (!data.durationSec) {
+      throw new Error("Duration is required.");
+    }
+
+    const urlObj = new URL(fitbitUrlCurrentUser("activities"));
+    if (data.activityId) {
+      urlObj.searchParams.append("activityId", data.activityId);
+    } else {
+      urlObj.searchParams.append("activityName", data.activityName);
+    }
+
+    urlObj.searchParams.append("startTime", data.startTime);
+    urlObj.searchParams.append("manualCalories", data.manualCalories);
+    urlObj.searchParams.append("durationMillis", String(parseInt(data.durationSec) * 1000));
+    urlObj.searchParams.append("date", formatDate(data.startDate));
+    urlObj.searchParams.append("distance", data.distance);
+    return urlObj.href;
+  }
+
+  static deleteActivty(data) {
+    checkData(data);
+
+    if (!data.activityLogId) {
+      throw new Error("activityLogId is required.");
+    }
+
+    return fitbitUrlCurrentUser("activities", data.activityLogId);
+  }
+
 }
 
 module.exports = UrlFactory;
