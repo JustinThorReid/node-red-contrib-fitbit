@@ -1,4 +1,4 @@
-const moment = require('moment');
+const UrlFactory = require('./UrlFactory');
 
 function parseFitbitData(body) {
     if (!body)
@@ -48,121 +48,37 @@ module.exports = function (RED) {
         "body-fat-log": {
             display: RED._("fitbit.resources.body-fat-log"),
             inputs: ["startDate", "endDate", "period"],
-            func: (data) => {
-                if (!data.startDate) {
-                    throw "Start date is required.";
-                }
-                const formattedStartDate = moment(data.startDate).format('YYYY-MM-DD');
-
-                if (data.startDate && !data.endDate && !data.period) {
-                    return "https://api.fitbit.com/1/user/-/body/log/fat/date/" + formattedStartDate + ".json";
-                } else if (data.startDate && data.endDate && !data.period) {
-                    const formattedEndDate = moment(data.endDate).format('YYYY-MM-DD');
-                    return "https://api.fitbit.com/1/user/-/body/log/fat/date/" + formattedStartDate + "/" + formattedEndDate + ".json";
-                } else if (data.startDate && !data.endDate && data.period) {
-                    if (!['1d', '7d', '1w', '1m'].includes(data.period)) throw "Invalid period";
-
-                    return "https://api.fitbit.com/1/user/-/body/log/fat/date/" + formattedStartDate + "/" + data.period + ".json";
-                } else {
-                    throw "Bad input combination";
-                }
-            }
+            func: UrlFactory.bodyFatLog
         },
         "body-weight-log": {
             display: RED._("fitbit.resources.body-weight-log"),
             inputs: ["startDate", "endDate", "period"],
-            func: (data) => {
-                if (!data.startDate) {
-                    throw "Start date is required.";
-                }
-                const formattedStartDate = moment(data.startDate).format('YYYY-MM-DD');
-
-                if (data.startDate && !data.endDate && !data.period) {
-                    return "https://api.fitbit.com/1/user/-/body/log/weight/date/" + formattedStartDate + ".json";
-                } else if (data.startDate && data.endDate && !data.period) {
-                    const formattedEndDate = moment(data.endDate).format('YYYY-MM-DD');
-                    return "https://api.fitbit.com/1/user/-/body/log/weight/date/" + formattedStartDate + "/" + formattedEndDate + ".json";
-                } else if (data.startDate && !data.endDate && data.period) {
-                    if (!['1d', '7d', '1w', '1m'].includes(data.period)) throw "Invalid period";
-
-                    return "https://api.fitbit.com/1/user/-/body/log/weight/date/" + formattedStartDate + "/" + data.period + ".json";
-                } else {
-                    throw "Bad input combination";
-                }
-            }
+            func: UrlFactory.bodyWeightLog
         },
         "body-timeseries": {
             display: RED._("fitbit.resources.body-timeseries"),
             inputs: ["bodySeriesPath", "startDate", "endDate", "period"],
-            func: (data) => {
-                if (!data.startDate) {
-                    throw "Start date is required.";
-                }
-                if (!data.bodySeriesPath) {
-                    throw "Resource is required";
-                }
-                const formattedStartDate = moment(data.startDate).format('YYYY-MM-DD');
-
-                if (data.startDate && !data.endDate && data.period) {
-                    return "https://api.fitbit.com/1/user/-/body/" + data.bodySeriesPath + "/date/" + formattedStartDate + "/" + data.period + ".json";
-                } else if (data.startDate && data.endDate && !data.period) {
-                    const formattedEndDate = moment(data.endDate).format('YYYY-MM-DD');
-                    return "https://api.fitbit.com/1/user/-/body/" + data.bodySeriesPath + "/date/" + formattedStartDate + "/" + formattedEndDate + ".json";
-                } else {
-                    throw "Bad input combination";
-                }
-            }
+            func: UrlFactory.bodyTimeSeries
         },
         "activity-timeseries": {
             display: RED._("fitbit.resources.activity-timeseries"),
             inputs: ["activitiesSeriesPath", "startDate", "endDate", "period"],
-            func: (data) => {
-                if (!data.activitiesSeriesPath) {
-                    throw "Resource is required";
-                }
-                if (!data.endDate) {
-                    throw "End date is required.";
-                }
-                const formattedEndDate = moment(data.endDate).format('YYYY-MM-DD');
-
-                if (!data.startDate && data.endDate && data.period) {
-                    return "https://api.fitbit.com/1/user/-/activities/" + data.activitiesSeriesPath + "/date/" + formattedEndDate + "/" + data.period + ".json";
-                } else if (data.startDate && data.endDate && !data.period) {
-                    const formattedStartDate = moment(data.startDate).format('YYYY-MM-DD');
-                    return "https://api.fitbit.com/1/user/-/activities/" + data.activitiesSeriesPath + "/date/" + formattedStartDate + "/" + formattedEndDate + ".json";
-                } else {
-                    throw "Bad input combination";
-                }
-            }
+            func: UrlFactory.activityTimeSeries
         },
         "activity-summary": {
             display: RED._("fitbit.resources.activity-summary-in"),
             inputs: ["startDate"],
-            func: (data) => {
-                if (!data.startDate) {
-                    throw "Start date is required.";
-                }
-                const formattedStartDate = moment(data.startDate).format('YYYY-MM-DD');
-                return "https://api.fitbit.com/1/user/-/activities/date/" + formattedStartDate + ".json";
-            }
+            func: UrlFactory.activitySummary
         },
         "devices": {
             display: RED._("fitbit.resources.devices-in"),
             inputs: [],
-            func: (data) => {
-                return "https://api.fitbit.com/1/user/-/devices.json";
-            }
+            func: UrlFactory.devices
         },
         "sleep-log": {
             display: RED._("fitbit.resources.sleep-log"),
             inputs: ["startDate"],
-            func: (data) => {
-                if (!data.startDate) {
-                    throw "Start date is required.";
-                }
-                const formattedStartDate = moment(data.startDate).format('YYYY-MM-DD');
-                return "https://api.fitbit.com/1/user/-/sleep/date/" + formattedStartDate + ".json";
-            }
+            func: UrlFactory.sleepLog
         }
     };
 
