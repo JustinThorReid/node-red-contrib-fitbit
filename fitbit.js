@@ -1,15 +1,15 @@
 const UrlFactory = require('./UrlFactory');
 
 function parseFitbitData(data) {
+    if (!data)
+        throw "Fitbit API returned an empty response";
+
     const status = data.statusCode;
     const body = data.body;
 
     if (status == 204) { // No content
         return {}
     }
-
-    if (!body)
-        throw "Fitbit API returned an empty response";
 
     let result_json;
     try {
