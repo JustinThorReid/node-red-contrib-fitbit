@@ -147,7 +147,7 @@ class UrlFactory {
     }
 
     if (!data.manualCalories) {
-      throw new Error("manualCalories is required");
+      throw new Error("manualCalories is required.");
     }
 
     if (!data.startDate) {
@@ -155,7 +155,7 @@ class UrlFactory {
     }
 
     if (!data.startTime) {
-      throw new Error("Start date is required.");
+      throw new Error("Start time is required.");
     }
 
     if (!data.durationSec) {
@@ -173,7 +173,9 @@ class UrlFactory {
     urlObj.searchParams.append("manualCalories", data.manualCalories);
     urlObj.searchParams.append("durationMillis", String(parseInt(data.durationSec) * 1000));
     urlObj.searchParams.append("date", formatDate(data.startDate));
-    urlObj.searchParams.append("distance", data.distance);
+    if (data.distance) {
+      urlObj.searchParams.append("distance", data.distance);
+    }
     return urlObj.href;
   }
 
