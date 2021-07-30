@@ -20,6 +20,7 @@
             period: {},
             periodType: {},
             bodySeriesPath: {},
+            foodSeriesPath: {},
             activitiesSeriesPath: {},
             startTime: {},
             startTimeType: {},
@@ -99,6 +100,14 @@
                 <option value="bmi" data-i18n="fitbit.label.bodySeriesPathBmi"></option>
                 <option value="fat" data-i18n="fitbit.label.bodySeriesPathFat"></option>
                 <option value="weight" data-i18n="fitbit.label.bodySeriesPathWeight"></option>
+            </select>
+        </div>
+        <div class="form-row">
+            <label for="node-input-foodSeriesPath"><i class="fa fa-tag"></i> <span data-i18n="fitbit.label.foodSeriesPath"></span></label>
+            <select id="node-input-foodSeriesPath">
+                <option value="" selected disabled hidden data-i18n="fitbit.label.foodSeriesPathDefault"></option>
+                <option value="caloriesIn" data-i18n="fitbit.label.foodSeriesPathCaloriesIn"></option>
+                <option value="water" data-i18n="fitbit.label.foodSeriesPathWater"></option>
             </select>
         </div>
         <div class="form-row">

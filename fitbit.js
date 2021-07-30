@@ -70,6 +70,12 @@ module.exports = function (RED) {
             method: "GET",
             func: UrlFactory.bodyTimeSeries
         },
+        "food-timeseries": {
+            display: RED._("fitbit.resources.food-timeseries"),
+            inputs: ["foodSeriesPath", "startDate", "endDate", "period"],
+            method: "GET",
+            func: UrlFactory.foodTimeSeries
+        },
         "activity-timeseries": {
             display: RED._("fitbit.resources.activity-timeseries"),
             inputs: ["activitiesSeriesPath", "startDate", "endDate", "period"],

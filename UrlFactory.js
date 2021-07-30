@@ -44,6 +44,27 @@ class UrlFactory {
     }
   }
 
+  static foodTimeSeries(data) {
+    checkData(data);
+
+    if (!data.startDate) {
+      throw new Error("Start date is required.");
+    }
+    if (!data.foodSeriesPath) {
+      throw new Error("Resource is required");
+    }
+    const formattedStartDate = formatDate(data.startDate);
+
+    if (!data.endDate && data.period) {
+      return fitbitUrlCurrentUser("foods/log", data.foodSeriesPath, "date", formattedStartDate, data.period);
+    } else if (data.endDate && !data.period) {
+      const formattedEndDate = formatDate(data.endDate);
+      return fitbitUrlCurrentUser("foods/log", data.foodSeriesPath, "date", formattedStartDate, formattedEndDate);
+    } else {
+      throw new Error("Bad input combination");
+    }
+  }
+
   static bodyWeightLog(data) {
     checkData(data);
 
