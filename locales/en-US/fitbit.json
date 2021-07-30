@@ -8,13 +8,22 @@
             "body-timeseries": "Body Time Series",
             "activity-timeseries": "Activity Time Series",
             "default": "Resource",
-            "sleep-log": "Sleep Logs"
+            "sleep-log": "Sleep Logs",
+            "log-activity": "Log activity",
+            "delete-activity": "Delete activity"
         },
         "label": {
             "fitbit": "Fitbit",
             "name": "Name",
             "startdate": "Start Date",
+            "starttime": "Start Time",
             "enddate": "End Date",
+            "durationsec": "Duration(sec)",
+            "activityname": "Activity Name",
+            "activityid": "Activity Id",
+            "activitylogid": "Activity Log Id",
+            "calories": "Calories",
+            "distance": "Distance",
             "period": "Period",
             "resource": "Endpoint",
             "bodySeriesPath": "Resource",
