@@ -118,6 +118,16 @@ class UrlFactory {
     return fitbitUrlCurrentUser("activities/date/", formattedStartDate);
   }
 
+  static foodSummary(data) {
+    checkData(data);
+
+    if (!data.startDate) {
+      throw "Start date is required.";
+    }
+    const formattedStartDate = formatDate(data.startDate);
+    return fitbitUrlCurrentUser("foods/log/date/", formattedStartDate);
+  }
+
   static devices() {
     return fitbitUrlCurrentUser("devices");
   }

@@ -71,5 +71,4 @@ describe('UrlFactory.foodTimeSeries', () => {
     done();
   });
 
-
 });

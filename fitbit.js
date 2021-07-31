@@ -88,6 +88,12 @@ module.exports = function (RED) {
             method: "GET",
             func: UrlFactory.activitySummary
         },
+        "food-summary": {
+            display: RED._("fitbit.resources.food-summary"),
+            inputs: ["startDate"],
+            method: "GET",
+            func: UrlFactory.foodSummary
+        },
         "devices": {
             display: RED._("fitbit.resources.devices-in"),
             inputs: [],
