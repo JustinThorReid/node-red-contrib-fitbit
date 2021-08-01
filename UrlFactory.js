@@ -169,12 +169,12 @@ class UrlFactory {
   static logActivty(data) {
     checkData(data);
 
-    if (!data.activityId && !data.activityName) {
-      throw new Error("activityId or activityName is required.");
-    }
-
     if (data.activityId && data.activityName) {
       throw new Error("Either activityId or activityName should be specified.");
+    }
+
+    if (!data.activityId && !data.activityName) {
+      throw new Error("activityId or activityName is required.");
     }
 
     if (!data.manualCalories) {
@@ -218,6 +218,40 @@ class UrlFactory {
     }
 
     return fitbitUrlCurrentUser("activities", data.activityLogId);
+  }
+
+  static logFood(data) {
+    checkData(data);
+
+    if (!data.foodId) {
+      throw new Error("Food ID is required.");
+    }
+
+    if (!data.manualCalories) {
+      throw new Error("Calories is required.");
+    }
+
+    if (!data.startDate) {
+      throw new Error("Start date is required.");
+    }
+
+    if (!data.mealTypeId) {
+      throw new Error("Meal Type Id is required.");
+    }
+
+    if (!data.unitId) {
+      throw new Error("Unit ID is required.");
+    }
+
+    const urlObj = new URL(fitbitUrlCurrentUser("foods/log"));
+
+    urlObj.searchParams.append("foodId", data.foodId);
+    urlObj.searchParams.append("amount", data.manualCalories);
+    urlObj.searchParams.append("date", formatDate(data.startDate));
+    urlObj.searchParams.append("mealTypeId", data.mealTypeId);
+    urlObj.searchParams.append("unitId", data.unitId);
+
+    return urlObj.href;
   }
 
 }

@@ -36,6 +36,12 @@
             distanceType: {},
             activityLogId: {},
             activityLogIdType: {},
+            foodId: {},
+            foodIdType: {},
+            mealTypeId: {},
+            mealTypeIdType: {},
+            unitId: {},
+            unitIdType: {}
         },
         inputs: 1,
         outputs: 1,
@@ -77,6 +83,9 @@
             typeInput('manualCalories');
             typeInput('distance');
             typeInput('activityLogId');
+            typeInput('foodId');
+            typeInput('mealTypeId');
+            typeInput('unitId');
         }
     });
 </script>
@@ -170,6 +179,21 @@
             <label for="node-input-period"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.period"></span></label>
             <input type="text" id="node-input-period" style="width:275px;">
             <input type="hidden" id="node-input-periodType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-unitId"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.unitId"></span></label>
+            <input type="text" id="node-input-unitId" style="width:275px;">
+            <input type="hidden" id="node-input-unitIdType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-foodId"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.foodId"></span></label>
+            <input type="text" id="node-input-foodId" style="width:275px;">
+            <input type="hidden" id="node-input-foodIdType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-mealTypeId"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.mealType"></span></label>
+            <input type="text" id="node-input-mealTypeId" style="width:275px;">
+            <input type="hidden" id="node-input-mealTypeIdType">
         </div>
     </div>
     <div class="form-row">

@@ -117,7 +117,13 @@ module.exports = function (RED) {
             inputs: ["activityLogId"],
             method: "DELETE",
             func: UrlFactory.deleteActivty,
-        }
+        },
+        "log-food": {
+            display: RED._("fitbit.resources.log-food"),
+            inputs: ["startDate", "foodId", "mealTypeId", "unitId", "manualCalories"],
+            method: "POST",
+            func: UrlFactory.logFood,
+        },
     };
 
     function fitbitInNode(config) {

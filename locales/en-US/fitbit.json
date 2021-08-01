@@ -12,7 +12,9 @@
             "default": "Resource",
             "sleep-log": "Sleep Logs",
             "log-activity": "Log activity",
-            "delete-activity": "Delete activity"
+            "delete-activity": "Delete activity",
+            "log-food": "Log food",
+            "delete-food": "Delete log food"
         },
         "label": {
             "fitbit": "Fitbit",
@@ -24,6 +26,9 @@
             "activityname": "Activity Name",
             "activityid": "Activity Id",
             "activitylogid": "Activity Log Id",
+            "unitId": "Unit ID",
+            "mealType": "Meal Type",
+            "foodId": "Food ID",
             "calories": "Calories",
             "distance": "Distance",
             "period": "Period",
