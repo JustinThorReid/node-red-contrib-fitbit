@@ -12,7 +12,7 @@ function parseFitbitData(body) {
     }
 
     if (result_json.hasOwnProperty("errors"))
-        throw "Fitbit API error: " + result_json.errors.map(e=>e.message).join(", ");
+        throw "Fitbit API error: " + result_json.errors.map(e => e.message).join(", ");
 
     return result_json;
 }
@@ -89,7 +89,7 @@ module.exports = function (RED) {
 
         const errorReport = function (errorText, msg) {
             node.error(errorText, msg);
-            node.status({text: errorText , fill: "red"});
+            node.status({ text: errorText, fill: "red" });
             node.send(null);
         };
 
@@ -126,9 +126,7 @@ module.exports = function (RED) {
             }
 
             const credentialsNode = RED.nodes.getNode(config.fitbit);
-            const credentials = RED.nodes.getNode(config.fitbit).credentials;
-
-            oauth.makeRequest("GET", url, credentials, credentialsNode.id).then(data => {
+            oauth.makeRequest("GET", url, credentialsNode.credentials, credentialsNode.id).then(data => {
                 try {
                     msg.payload = parseFitbitData(data);
                 } catch (err) {
