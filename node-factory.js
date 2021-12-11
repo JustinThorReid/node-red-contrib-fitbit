@@ -51,7 +51,7 @@ module.exports = function (RED) {
                 const credentials = RED.nodes.getNode(config.fitbit).credentials;
 
                 oauth.makeRequest("GET", url, credentials, credentialsNode.id).then(data => {
-                    msg.payload = data;
+                    msg.payload = data.body;
                     node.send(msg);
                 })
             });

@@ -13,7 +13,6 @@
             fitbit: { type: "fitbit-credentials", required: true },
             name: { value: "" },
             resource: { value: "", required: true },
-
             startDate: {},
             startDateType: {},
             endDate: {},
@@ -21,7 +20,28 @@
             period: {},
             periodType: {},
             bodySeriesPath: {},
-            activitiesSeriesPath: {}
+            foodSeriesPath: {},
+            activitiesSeriesPath: {},
+            startTime: {},
+            startTimeType: {},
+            durationSec: {},
+            durationSecType: {},
+            activityName: {},
+            activityNameType: {},
+            activityId: {},
+            activityIdType: {},
+            manualCalories: {},
+            manualCaloriesType: {},
+            distance: {},
+            distanceType: {},
+            activityLogId: {},
+            activityLogIdType: {},
+            foodId: {},
+            foodIdType: {},
+            mealTypeId: {},
+            mealTypeIdType: {},
+            unitId: {},
+            unitIdType: {}
         },
         inputs: 1,
         outputs: 1,
@@ -54,8 +74,18 @@
             });
 
             typeInput('startDate');
+            typeInput('startTime');
             typeInput('endDate');
             typeInput('period');
+            typeInput('durationSec');
+            typeInput('activityName');
+            typeInput('activityId');
+            typeInput('manualCalories');
+            typeInput('distance');
+            typeInput('activityLogId');
+            typeInput('foodId');
+            typeInput('mealTypeId');
+            typeInput('unitId');
         }
     });
 </script>
@@ -82,6 +112,14 @@
             </select>
         </div>
         <div class="form-row">
+            <label for="node-input-foodSeriesPath"><i class="fa fa-tag"></i> <span data-i18n="fitbit.label.foodSeriesPath"></span></label>
+            <select id="node-input-foodSeriesPath">
+                <option value="" selected disabled hidden data-i18n="fitbit.label.foodSeriesPathDefault"></option>
+                <option value="caloriesIn" data-i18n="fitbit.label.foodSeriesPathCaloriesIn"></option>
+                <option value="water" data-i18n="fitbit.label.foodSeriesPathWater"></option>
+            </select>
+        </div>
+        <div class="form-row">
             <label for="node-input-activitiesSeriesPath"><i class="fa fa-tag"></i> <span data-i18n="fitbit.label.activitiesSeriesPath"></span></label>
             <select id="node-input-activitiesSeriesPath">
                 <option value="" selected disabled hidden data-i18n="fitbit.label.activitiesSeriesPathDefault"></option>
@@ -98,6 +136,41 @@
             <input type="hidden" id="node-input-startDateType">
         </div>
         <div class="form-row">
+            <label for="node-input-startTime"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.starttime"></span></label>
+            <input type="text" id="node-input-startTime" style="width:275px;">
+            <input type="hidden" id="node-input-startTimeType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-activityLogId"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.activitylogid"></span></label>
+            <input type="text" id="node-input-activityLogId" style="width:275px;">
+            <input type="hidden" id="node-input-activityLogIdType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-durationSec"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.durationsec"></span></label>
+            <input type="text" id="node-input-durationSec" style="width:275px;">
+            <input type="hidden" id="node-input-durationSecType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-activityId"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.activityid"></span></label>
+            <input type="text" id="node-input-activityId" style="width:275px;">
+            <input type="hidden" id="node-input-activityIdType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-activityName"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.activityname"></span></label>
+            <input type="text" id="node-input-activityName" style="width:275px;">
+            <input type="hidden" id="node-input-activityNameType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-manualCalories"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.calories"></span></label>
+            <input type="text" id="node-input-manualCalories" style="width:275px;">
+            <input type="hidden" id="node-input-manualCaloriesType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-distance"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.distance"></span></label>
+            <input type="text" id="node-input-distance" style="width:275px;">
+            <input type="hidden" id="node-input-distanceType">
+        </div>
+        <div class="form-row">
             <label for="node-input-endDate"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.enddate"></span></label>
             <input type="text" id="node-input-endDate" style="width:275px;">
             <input type="hidden" id="node-input-endDateType">
@@ -106,6 +179,21 @@
             <label for="node-input-period"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.period"></span></label>
             <input type="text" id="node-input-period" style="width:275px;">
             <input type="hidden" id="node-input-periodType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-unitId"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.unitId"></span></label>
+            <input type="text" id="node-input-unitId" style="width:275px;">
+            <input type="hidden" id="node-input-unitIdType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-foodId"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.foodId"></span></label>
+            <input type="text" id="node-input-foodId" style="width:275px;">
+            <input type="hidden" id="node-input-foodIdType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-mealTypeId"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.mealType"></span></label>
+            <input type="text" id="node-input-mealTypeId" style="width:275px;">
+            <input type="hidden" id="node-input-mealTypeIdType">
         </div>
     </div>
     <div class="form-row">

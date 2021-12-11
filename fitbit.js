@@ -1,8 +1,15 @@
 const UrlFactory = require('./UrlFactory');
 
-function parseFitbitData(body) {
-    if (!body)
+function parseFitbitData(data) {
+    if (!data)
         throw "Fitbit API returned an empty response";
+
+    const status = data.statusCode;
+    const body = data.body;
+
+    if (status == 204) { // No content
+        return {}
+    }
 
     let result_json;
     try {
@@ -48,38 +55,75 @@ module.exports = function (RED) {
         "body-fat-log": {
             display: RED._("fitbit.resources.body-fat-log"),
             inputs: ["startDate", "endDate", "period"],
+            method: "GET",
             func: UrlFactory.bodyFatLog
         },
         "body-weight-log": {
             display: RED._("fitbit.resources.body-weight-log"),
             inputs: ["startDate", "endDate", "period"],
+            method: "GET",
             func: UrlFactory.bodyWeightLog
         },
         "body-timeseries": {
             display: RED._("fitbit.resources.body-timeseries"),
             inputs: ["bodySeriesPath", "startDate", "endDate", "period"],
+            method: "GET",
             func: UrlFactory.bodyTimeSeries
+        },
+        "food-timeseries": {
+            display: RED._("fitbit.resources.food-timeseries"),
+            inputs: ["foodSeriesPath", "startDate", "endDate", "period"],
+            method: "GET",
+            func: UrlFactory.foodTimeSeries
         },
         "activity-timeseries": {
             display: RED._("fitbit.resources.activity-timeseries"),
             inputs: ["activitiesSeriesPath", "startDate", "endDate", "period"],
+            method: "GET",
             func: UrlFactory.activityTimeSeries
         },
         "activity-summary": {
             display: RED._("fitbit.resources.activity-summary-in"),
             inputs: ["startDate"],
+            method: "GET",
             func: UrlFactory.activitySummary
+        },
+        "food-summary": {
+            display: RED._("fitbit.resources.food-summary"),
+            inputs: ["startDate"],
+            method: "GET",
+            func: UrlFactory.foodSummary
         },
         "devices": {
             display: RED._("fitbit.resources.devices-in"),
             inputs: [],
+            method: "GET",
             func: UrlFactory.devices
         },
         "sleep-log": {
             display: RED._("fitbit.resources.sleep-log"),
             inputs: ["startDate"],
+            method: "GET",
             func: UrlFactory.sleepLog
-        }
+        },
+        "log-activity": {
+            display: RED._("fitbit.resources.log-activity"),
+            inputs: ["startDate", "startTime", "durationSec", "activityId", "activityName", "manualCalories", "distance"],
+            method: "POST",
+            func: UrlFactory.logActivty,
+        },
+        "delete-activity": {
+            display: RED._("fitbit.resources.delete-activity"),
+            inputs: ["activityLogId"],
+            method: "DELETE",
+            func: UrlFactory.deleteActivty,
+        },
+        "log-food": {
+            display: RED._("fitbit.resources.log-food"),
+            inputs: ["startDate", "foodId", "mealTypeId", "unitId", "manualCalories"],
+            method: "POST",
+            func: UrlFactory.logFood,
+        },
     };
 
     function fitbitInNode(config) {
@@ -128,7 +172,7 @@ module.exports = function (RED) {
             const credentialsNode = RED.nodes.getNode(config.fitbit);
             const credentials = RED.nodes.getNode(config.fitbit).credentials;
 
-            oauth.makeRequest("GET", url, credentials, credentialsNode.id).then(data => {
+            oauth.makeRequest(resource.method, url, credentials, credentialsNode.id).then(data => {
                 try {
                     msg.payload = parseFitbitData(data);
                 } catch (err) {

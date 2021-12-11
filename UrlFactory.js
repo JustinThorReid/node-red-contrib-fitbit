@@ -44,6 +44,27 @@ class UrlFactory {
     }
   }
 
+  static foodTimeSeries(data) {
+    checkData(data);
+
+    if (!data.startDate) {
+      throw new Error("Start date is required.");
+    }
+    if (!data.foodSeriesPath) {
+      throw new Error("Resource is required");
+    }
+    const formattedStartDate = formatDate(data.startDate);
+
+    if (!data.endDate && data.period) {
+      return fitbitUrlCurrentUser("foods/log", data.foodSeriesPath, "date", formattedStartDate, data.period);
+    } else if (data.endDate && !data.period) {
+      const formattedEndDate = formatDate(data.endDate);
+      return fitbitUrlCurrentUser("foods/log", data.foodSeriesPath, "date", formattedStartDate, formattedEndDate);
+    } else {
+      throw new Error("Bad input combination");
+    }
+  }
+
   static bodyWeightLog(data) {
     checkData(data);
 
@@ -97,6 +118,16 @@ class UrlFactory {
     return fitbitUrlCurrentUser("activities/date/", formattedStartDate);
   }
 
+  static foodSummary(data) {
+    checkData(data);
+
+    if (!data.startDate) {
+      throw "Start date is required.";
+    }
+    const formattedStartDate = formatDate(data.startDate);
+    return fitbitUrlCurrentUser("foods/log/date/", formattedStartDate);
+  }
+
   static devices() {
     return fitbitUrlCurrentUser("devices");
   }
@@ -134,6 +165,95 @@ class UrlFactory {
       throw new Error("Bad input combination");
     }
   }
+
+  static logActivty(data) {
+    checkData(data);
+
+    if (data.activityId && data.activityName) {
+      throw new Error("Either activityId or activityName should be specified.");
+    }
+
+    if (!data.activityId && !data.activityName) {
+      throw new Error("activityId or activityName is required.");
+    }
+
+    if (!data.manualCalories) {
+      throw new Error("manualCalories is required.");
+    }
+
+    if (!data.startDate) {
+      throw new Error("Start date is required.");
+    }
+
+    if (!data.startTime) {
+      throw new Error("Start time is required.");
+    }
+
+    if (!data.durationSec) {
+      throw new Error("Duration is required.");
+    }
+
+    const urlObj = new URL(fitbitUrlCurrentUser("activities"));
+    if (data.activityId) {
+      urlObj.searchParams.append("activityId", data.activityId);
+    } else {
+      urlObj.searchParams.append("activityName", data.activityName);
+    }
+
+    urlObj.searchParams.append("startTime", data.startTime);
+    urlObj.searchParams.append("manualCalories", data.manualCalories);
+    urlObj.searchParams.append("durationMillis", String(parseInt(data.durationSec) * 1000));
+    urlObj.searchParams.append("date", formatDate(data.startDate));
+    if (data.distance) {
+      urlObj.searchParams.append("distance", data.distance);
+    }
+    return urlObj.href;
+  }
+
+  static deleteActivty(data) {
+    checkData(data);
+
+    if (!data.activityLogId) {
+      throw new Error("activityLogId is required.");
+    }
+
+    return fitbitUrlCurrentUser("activities", data.activityLogId);
+  }
+
+  static logFood(data) {
+    checkData(data);
+
+    if (!data.foodId) {
+      throw new Error("Food ID is required.");
+    }
+
+    if (!data.manualCalories) {
+      throw new Error("Calories is required.");
+    }
+
+    if (!data.startDate) {
+      throw new Error("Start date is required.");
+    }
+
+    if (!data.mealTypeId) {
+      throw new Error("Meal Type Id is required.");
+    }
+
+    if (!data.unitId) {
+      throw new Error("Unit ID is required.");
+    }
+
+    const urlObj = new URL(fitbitUrlCurrentUser("foods/log"));
+
+    urlObj.searchParams.append("foodId", data.foodId);
+    urlObj.searchParams.append("amount", data.manualCalories);
+    urlObj.searchParams.append("date", formatDate(data.startDate));
+    urlObj.searchParams.append("mealTypeId", data.mealTypeId);
+    urlObj.searchParams.append("unitId", data.unitId);
+
+    return urlObj.href;
+  }
+
 }
 
 module.exports = UrlFactory;
